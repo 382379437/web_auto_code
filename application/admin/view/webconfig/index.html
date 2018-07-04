@@ -1,0 +1,168 @@
+{extend name='admin@public/content'}
+
+{block name="button"}
+<!--{if auth("$classuri/add")}-->
+<?php $modal_type = 'data-modal';?>
+{notempty name='infofields'}
+{volist name='infofields' id='to'}
+{if getFormType($to.form_type) eq 'textarea_editer'}
+<?php $modal_type = 'data-load';?>
+{/if}
+{/volist}
+{/notempty}
+<button {$modal_type}='{:url("$classuri/add")}' data-title="添加{:isset($title)?$title:''}" class='layui-btn layui-btn-sm'>添加{:isset($title)?$title:''}</button>
+<!--{/if}-->
+<!--{if auth("$classuri/del")}-->
+<button data-update data-field='delete' data-action='{:url("$classuri/del")}' class='layui-btn layui-btn-sm layui-btn-danger'>一键删除</button>
+<!--{/if}-->
+{/block}
+
+{block name="content"}
+
+<!-- 表单搜索 开始 -->
+{notempty name='search_fields'}
+<form class=" layui-form-pane form-search" action="{:request()->url()}" onsubmit="return false" method="get">
+    {volist name='search_fields' id='v'}
+    <div class="layui-form-item layui-inline">
+        {if getFormType($v.form_type) == 'input'}
+        <label class="layui-form-label">{$v.title}</label>
+        <div class="layui-input-inline">
+            <input type="text" name="{$v.fields_name}" value="{:empty($input[$v.fields_name])?'':$input[$v.fields_name]}" placeholder="请输入{$v.title}" class="layui-input">
+        </div>
+        {elseif $v.form_type == 'date'}
+        {$v.title}：<input type="date" name="{$v.fields_name}_start" value="{:isset($input[$v.fields_name.'_start'])?$input[$v.fields_name.'_start']:''}" placeholder="请输入{$v.title}" title="请输入{$v.title}开始" class="layui-timeline">
+        -<input type="date" name="{$v.fields_name}_end" value="{:isset($input[$v.fields_name.'_end'])?$input[$v.fields_name.'_end']:''}" placeholder="请输入{$v.title}" title="请输入{$v.title}结束" class="layui-timeline">
+        {elseif  in_array(getFormType($v.form_type), ['select', 'radio']) /}
+        <label class="layui-form-label">{$v.title}</label>
+        <div class="layui-input-inline">
+            <select name="{$v.fields_name}" <?php $r_list = dealFormValueList($v['form_value'], $v['res_fields_name']); ?>>
+            <option value="">请选择</option>
+            {notempty name='r_list'}
+            {volist name='r_list' id='uo'}
+            <option value="{$uo.id}" {:isset($input[$v.fields_name])&&$input[$v.fields_name]==$uo.id?'selected':''}>{$uo.title}</option>
+            {/volist}
+            {/notempty}
+            </select>
+        </div>
+        {/if}
+    </div>
+    {/volist}
+
+    <div class="layui-form-item layui-inline">
+        <button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe615;</i> 搜 索</button>
+    </div>
+</form>
+{/notempty}
+<script>
+    window.laydate.render({range: true, elem: '#range-date'});
+</script>
+<!-- 表单搜索 结束 -->
+
+<form onsubmit="return false;" data-auto="true" method="post">
+    <!--{empty name='list'}-->
+    <p class="help-block text-center well">没 有 记 录 哦！</p>
+    <!--{else}-->
+    <input type="hidden" value="resort" name="action">
+    <table class="layui-table" lay-skin="line">
+        <thead>
+        <tr>
+            <th class='list-table-check-td'>
+                <input data-auto-none="" data-check-target='.list-check-box' type='checkbox'>
+            </th>
+            {notempty name='infofields'}
+            {volist name='infofields' id='to'}
+            {if !empty($to.is_show)}
+            <th class='text-left nowrap'>{$to.title}</th>
+            {/if}
+            {/volist}
+            {/notempty}
+            <th class='text-left nowrap'></th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- 编辑页面打开方式，1 data-modal  2 data-load 3 data-open -->
+        <span <?php $open_type = 'data-modal';?>></span>
+        <!--{foreach $list as $key=>$vo}-->
+        <tr>
+            <td class='list-table-check-td'>
+                <input class="list-check-box" value='{$vo.id}' type='checkbox'>
+            </td>
+            {notempty name='infofields'}
+            {volist name='infofields' id='to'}
+            {if !empty($to.is_show)}
+                {if $to.fields_name == 'is_deleted'/}
+                    <td class='text-left nowrap'>
+                        {if $vo.is_deleted eq 1}<span class="color-red">已禁用</span>{else /}<span class="color-green">使用中</span>{/if}
+                    </td>
+                {elseif $to.fields_name == 'sex'/}
+                    <td class='text-left nowrap'>{$vo[$to.fields_name] == 1?'GG':'MM'}</td>
+                {elseif getFormType($to.form_type) == 'img'/}
+                    <td class='text-left nowrap'>
+                        {notempty name='$vo[$to.fields_name]'}
+                        <img src="{$vo[$to.fields_name]}" onclick="magnifyImg(this)">
+                        {/notempty}
+                    </td>
+                    <script>
+                        //layer.open查看大图 待扩展
+                        var magnifyImg = function (o) {
+                            $('#hid_show_img_div').children('img').attr('src',$(o).attr('src')).show();
+                        }
+                    </script>
+                {elseif in_array(getFormType($to.form_type), ['select', 'radio']) and false eq empty($to.form_value) /}
+                    <span <?php $r_list = dealFormValueList($to['form_value'], $to['res_fields_name']);?>></span>
+                    <!-- 如果 fields_name 与 id 不相等则需要留一个单元格 td-->
+                    <span <?php $is_eq = false;?>></span>
+                    {notempty name='r_list'}
+                        {volist name='r_list' id='fo'}
+                        {if $vo[$to['fields_name']] == $fo['id']}
+                        <?php $is_eq=true;?>
+                        <td class='text-left nowrap' >{$fo['title']}</td>
+                        {/if}
+                        {/volist}
+                    {/notempty}
+                    {if $is_eq == false}
+                        <td class='text-left nowrap' ></td>
+                    {/if}
+                {else/}
+                    <td class='text-left nowrap'>{:htmlspecialchars_decode($vo[$to.fields_name])}</td>
+                {/if}
+            {elseif getFormType($to.form_type) == 'textarea_editer'/}
+            <?php $open_type = 'data-load';?>
+            {/if}
+            {/volist}
+            {/notempty}
+
+            <td class='text-right nowrap'>
+
+                {if auth("$classuri/edit")}
+                <span class="text-explode">|</span>
+                <a {$open_type}='{:url("$classuri/edit")}?id={$vo.id}'>编辑</a>
+                {/if}
+
+                {if auth("$classuri/del")}
+                <span class="text-explode">|</span>
+                <a data-update="{$vo.id}" data-field='delete' data-action='{:url("$classuri/del")}'>删除</a>
+                {/if}
+
+            </td>
+        </tr>
+        <!--{/foreach}-->
+        </tbody>
+    </table>
+    {if isset($page)}<p>{$page|raw}</p>{/if}
+    <!--{/empty}-->
+</form>
+<div class="hid_show_img_div" style="display: none;text-align: center;
+    /*background-color: #fff;*/
+    border-radius: 20px;
+    /*width: 300px;*/
+    /*height: 350px;*/
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;">
+    <img>
+</div>
+{/block}

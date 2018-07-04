@@ -1,0 +1,831 @@
+---------------------------------------------------------------
+[ 2018-07-03T16:24:56+08:00 ] 127.0.0.1 GET /
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'index/index/index' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:24:56+08:00 ] 127.0.0.1 GET /admin/login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/login/index' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:32:52+08:00 ] 127.0.0.1 POST /admin/login.html?spm=
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/login/index' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.018000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `system_user`  SET `login_at` = now() , `login_num` = login_num+1  WHERE  `id` = 10000 [ RunTime:0.042000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (2,4)  AND `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_log` [ RunTime:0.019000s ]
+[ sql ] [ SQL ] INSERT INTO `system_log` (`ip` , `node` , `action` , `content` , `username`) VALUES ('127.0.0.1' , 'admin/login/index' , '系统管理' , '用户登录系统成功' , 'admin') [ RunTime:0.050000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:32:52+08:00 ] 127.0.0.1 GET /admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.020000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (2,4)  AND `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.019000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY sort asc,id asc [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.019000s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:32:52+08:00 ] 127.0.0.1 GET /admin/index/main.html?spm=m-7
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.019000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/main' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] select version() as ver [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:36:27+08:00 ] 127.0.0.1 GET /tst.html?spm=m-43-44-45
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/test/index' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:36:58+08:00 ] 127.0.0.1 GET /admin/dbmanage/index.html?timeToDate=1530606987&dateToTime=2018-07-03%2016:36:27&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/dbmanage/index' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:37:17+08:00 ] 127.0.0.1 GET /admin/autocode/index.html?spm=m-43-44-46
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/index' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:41:41+08:00 ] 127.0.0.1 GET /admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (2,4)  AND `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY sort asc,id asc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:41:41+08:00 ] 127.0.0.1 GET /admin/autocode/index.html?spm=m-43-44-46
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/index' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:41:51+08:00 ] 127.0.0.1 GET /admin/index/main.html?spm=m-7
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/main' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] select version() as ver [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:41:53+08:00 ] 127.0.0.1 GET /store/goods/index.html?spm=m-32-33-34
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'store/goods/index' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `store_goods` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `store_goods` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `store_goods` WHERE  `is_deleted` = 0 ORDER BY status desc,sort asc,id desc LIMIT 0,20 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `store_goods_cate` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`cate_title`,`cate_desc` FROM `store_goods_cate` WHERE  `status` = 1  AND `is_deleted` = 0 ORDER BY sort asc,id desc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `store_goods_brand` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT `id`,`brand_logo`,`brand_cover`,`brand_title`,`brand_desc`,`brand_detail` FROM `store_goods_brand` WHERE  `status` = 1  AND `is_deleted` = 0 ORDER BY sort asc,id desc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `store_goods_list` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT `id`,`goods_id`,`goods_spec`,`goods_number`,`market_price`,`selling_price`,`goods_stock`,`goods_sale` FROM `store_goods_list` WHERE  `status` = 1  AND `is_deleted` = 0  AND `goods_id` IN (1) [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:41:56+08:00 ] 127.0.0.1 GET /wechat/config/index.html?spm=m-17-18-19
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'wechat/config/index' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:41:56+08:00 ] 127.0.0.1 GET /wechat/api.tools/oauth_qrc.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'wechat/api.tools/oauth_qrc' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:41:57+08:00 ] 127.0.0.1 GET /admin/menu/index.html?spm=m-1-10-2
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/menu/index' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` ORDER BY sort asc,id asc [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:41:57+08:00 ] 127.0.0.1 GET /wechat/api.tools/jssdk_qrc.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'wechat/api.tools/jssdk_qrc' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:42:00+08:00 ] 127.0.0.1 GET /admin/autocode/index.html?spm=m-43-44-46
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/index' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:44:15+08:00 ] 127.0.0.1 GET /admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (2,4)  AND `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY sort asc,id asc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:44:15+08:00 ] 127.0.0.1 GET /admin/autocode/index.html?spm=m-43-44-46
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/index' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:44:48+08:00 ] 127.0.0.1 GET /admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (2,4)  AND `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY sort asc,id asc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:44:48+08:00 ] 127.0.0.1 GET /admin/autocode/index.html?spm=m-43-44-46
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/index' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:45:15+08:00 ] 127.0.0.1 GET /admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (2,4)  AND `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY sort asc,id asc [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:45:16+08:00 ] 127.0.0.1 GET /admin/autocode/index.html?spm=m-43-44-46
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.018000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/index' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.019000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:54:25+08:00 ] 127.0.0.1 GET /wechat/config/index.html?spm=m-17-18-19
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'wechat/config/index' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:54:26+08:00 ] 127.0.0.1 GET /wechat/api.tools/oauth_qrc.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'wechat/api.tools/oauth_qrc' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T16:54:26+08:00 ] 127.0.0.1 GET /wechat/api.tools/jssdk_qrc.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'wechat/api.tools/jssdk_qrc' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:02:08+08:00 ] 127.0.0.1 GET /admin/menu/index.html?spm=m-1-10-2
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/menu/index' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` ORDER BY sort asc,id asc [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:02:12+08:00 ] 127.0.0.1 GET /admin/config/index.html?spm=m-1-10-3
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/config/index' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:02:17+08:00 ] 127.0.0.1 GET /admin/menu/index.html?spm=m-1-10-2
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` ORDER BY sort asc,id asc [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:02:18+08:00 ] 127.0.0.1 GET /admin/autocode/index.html?spm=m-43-44-46
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/index' LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:02:19+08:00 ] 127.0.0.1 GET /admin/autocode/indexview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/indexview' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_member` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:02:21+08:00 ] 127.0.0.1 GET /admin/autocode/index.html?spm=m-43-44-46
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/index' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:04:44+08:00 ] 127.0.0.1 GET /admin/autocode/add.html?spm=m-43-44-46&open_type=modal
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/add' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.014000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:11:03+08:00 ] 127.0.0.1 GET /admin/autocode/indexview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/indexview' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_member` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:25:11+08:00 ] 127.0.0.1 GET /admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.022000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.020000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (2,4)  AND `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY sort asc,id asc [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.019000s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:25:11+08:00 ] 127.0.0.1 GET /admin/autocode/indexview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/indexview' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_member` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:36:59+08:00 ] 127.0.0.1 GET /admin/autocode/index.html?spm=m-43-44-46
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/index' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.020000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:39:21+08:00 ] 127.0.0.1 GET /admin/autocode/indexview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/indexview' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_member` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:42:04+08:00 ] 127.0.0.1 GET /admin/autocode/addview.html?spm=m-43-44-47&open_type=modal
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/addview' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.020000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:44:43+08:00 ] 127.0.0.1 POST /admin/autocode/addview.html?spm=m-43-44-47&open_type=modal
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/addview' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.022000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code_fields` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] INSERT INTO `web_auto_code_fields` (`dbname` , `title` , `is_show` , `is_form` , `fields_name` , `type` , `size` , `decimals_size` , `default` , `form_type` , `form_value` , `res_fields_name` , `is_auto_tips` , `is_search` , `is_into_engine`) VALUES ('member' , '个人说明' , 0 , 1 , 'message' , 'varchar' , 3000 , 0 , '' , 'textarea_editer' , '' , '' , '' , 0 , 0) [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:44:46+08:00 ] 127.0.0.1 GET /admin/autocode/indexview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/indexview' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_member` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.003000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.003000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:47:37+08:00 ] 127.0.0.1 GET /admin/autocode/index.html?spm=m-43-44-46
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/index' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:47:43+08:00 ] 127.0.0.1 GET /admin/autocode/add.html?spm=m-43-44-46&open_type=modal
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/add' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.018000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:47:51+08:00 ] 127.0.0.1 GET /admin/autocode/edit.html?id=4&spm=m-43-44-46&open_type=modal
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/edit' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.020000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:50:30+08:00 ] 127.0.0.1 GET /admin/autocode/indexview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.019000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/indexview' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.025000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_member` [ RunTime:0.018000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.004000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.002000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.000000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:51:28+08:00 ] 127.0.0.1 GET /admin/autocode/createview.html?spm=m-43-44-47&open_type=modal
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/createview' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:51:58+08:00 ] 127.0.0.1 GET /admin/menu/index.html?spm=m-1-10-2
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/menu/index' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.020000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` ORDER BY sort asc,id asc [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:51:59+08:00 ] 127.0.0.1 GET /admin/config/index.html?spm=m-1-10-3
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/config/index' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.019000s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:52:08+08:00 ] 127.0.0.1 GET /admin/auth/index.html?spm=m-1-11-4
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/auth/index' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `system_auth` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_auth` ORDER BY sort asc LIMIT 0,20 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:52:11+08:00 ] 127.0.0.1 GET /admin/node/index.html?spm=m-1-11-6
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/node/index' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:52:59+08:00 ] 127.0.0.1 GET /admin/menu/index.html?spm=m-1-10-2
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.021000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/menu/index' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` ORDER BY sort asc,id asc [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:53:11+08:00 ] 127.0.0.1 GET /admin/menu/add.html?spm=m-1-10-2&open_type=modal
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/menu/add' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY sort asc,id asc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:55:10+08:00 ] 127.0.0.1 GET /admin/node/index.html?spm=m-1-11-6
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/node/index' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:58:50+08:00 ] 127.0.0.1 GET /admin/autocode/index.html?spm=m-43-44-46
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/index' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:58:51+08:00 ] 127.0.0.1 GET /admin/autocode/indexview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/indexview' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.022000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_member` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.003000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.002000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:59:31+08:00 ] 127.0.0.1 GET /admin/autocode/createview.html?spm=m-43-44-47&open_type=modal
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/createview' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T17:59:56+08:00 ] 127.0.0.1 POST /admin/autocode/getfields.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/getfields' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code_fields` WHERE  `dbname` = 'member'  AND `is_deleted` = 0 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:00:08+08:00 ] 127.0.0.1 POST /admin/autocode/nowtogocreate.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/nowtogocreate' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `dbname` = 'member'  AND `is_deleted` = 0 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:00:12+08:00 ] 127.0.0.1 POST /admin/autocode/toviewfiletemp.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/toviewfiletemp' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:12:22+08:00 ] 127.0.0.1 GET /admin/autocode/index.html?spm=m-43-44-46
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.018000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/index' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.023000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:12:27+08:00 ] 127.0.0.1 GET /admin/autocode/add.html?spm=m-43-44-46&open_type=modal
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/add' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.017000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:12:54+08:00 ] 127.0.0.1 POST /admin/autocode/del.html?spm=m-43-44-46
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/del' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] UPDATE `web_auto_code`  SET `is_deleted` = 1  WHERE  `id` IN (4) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:12:58+08:00 ] 127.0.0.1 GET /admin/autocode/index.html?spm=m-43-44-46
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/index' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:12:59+08:00 ] 127.0.0.1 GET /admin/autocode/indexview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/indexview' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_member` [ RunTime:0.020000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.002000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.003000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.004000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:13:07+08:00 ] 127.0.0.1 POST /admin/autocode/delview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/delview' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] UPDATE `web_auto_code_fields`  SET `is_deleted` = 1  WHERE  `id` IN (45) [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:13:11+08:00 ] 127.0.0.1 GET /admin/autocode/indexview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/indexview' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_member` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.000000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.000000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:13:15+08:00 ] 127.0.0.1 POST /admin/autocode/delview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/delview' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] UPDATE `web_auto_code_fields`  SET `is_deleted` = 1  WHERE  `id` IN (38) [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:13:18+08:00 ] 127.0.0.1 GET /admin/autocode/indexview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/indexview' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_member` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.003000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.000000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:13:20+08:00 ] 127.0.0.1 POST /admin/autocode/delview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/delview' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] UPDATE `web_auto_code_fields`  SET `is_deleted` = 1  WHERE  `id` IN (37) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:13:23+08:00 ] 127.0.0.1 GET /admin/autocode/indexview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/indexview' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_member` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:13:25+08:00 ] 127.0.0.1 POST /admin/autocode/delview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/delview' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] UPDATE `web_auto_code_fields`  SET `is_deleted` = 1  WHERE  `id` IN (36) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:13:28+08:00 ] 127.0.0.1 GET /admin/autocode/indexview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/indexview' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.021000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_member` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:13:30+08:00 ] 127.0.0.1 POST /admin/autocode/delview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/delview' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] UPDATE `web_auto_code_fields`  SET `is_deleted` = 1  WHERE  `id` IN (35) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:13:33+08:00 ] 127.0.0.1 GET /admin/autocode/indexview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/indexview' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_member` [ RunTime:0.015000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:13:35+08:00 ] 127.0.0.1 POST /admin/autocode/delview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/delview' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] UPDATE `web_auto_code_fields`  SET `is_deleted` = 1  WHERE  `id` IN (34) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:13:38+08:00 ] 127.0.0.1 GET /admin/autocode/indexview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/indexview' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:13:40+08:00 ] 127.0.0.1 GET /admin/autocode/index.html?spm=m-43-44-46
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/index' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:13:48+08:00 ] 127.0.0.1 GET /admin/autocode/add.html?spm=m-43-44-46&open_type=modal
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/add' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.016000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:20:40+08:00 ] 127.0.0.1 POST /admin/autocode/add.html?spm=m-43-44-46&open_type=modal
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.021000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/add' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.018000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] INSERT INTO `web_auto_code` (`title` , `controller` , `dbname`) VALUES ('会员管理' , 'Member' , 'member') [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:20:43+08:00 ] 127.0.0.1 GET /admin/autocode/index.html?spm=m-43-44-46
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/index' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:20:53+08:00 ] 127.0.0.1 GET /admin/autocode/indexview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/indexview' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:21:26+08:00 ] 127.0.0.1 GET /admin/autocode/addview.html?spm=m-43-44-47&open_type=modal
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/addview' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.020000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.019000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:23:36+08:00 ] 127.0.0.1 GET /admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (2,4)  AND `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.019000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY sort asc,id asc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:23:36+08:00 ] 127.0.0.1 GET /admin/autocode/indexview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.018000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/indexview' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:23:38+08:00 ] 127.0.0.1 GET /admin/autocode/addview.html?spm=m-43-44-47&open_type=modal
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/addview' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.013000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:46:10+08:00 ] 127.0.0.1 GET /admin/autocode/addview.html?spm=m-43-44-47&open_type=modal
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/addview' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.014000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:46:57+08:00 ] 127.0.0.1 POST /admin/autocode/addview.html?spm=m-43-44-47&open_type=modal
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/addview' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code_fields` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `web_auto_code_fields` (`dbname` , `title` , `is_show` , `is_form` , `fields_name` , `type` , `size` , `decimals_size` , `default` , `form_type` , `form_value` , `res_fields_name` , `is_auto_tips` , `is_search` , `is_into_engine`) VALUES ('member' , '会员名称' , 1 , 1 , 'name' , 'varchar' , 30 , 0 , '' , 'input' , '' , '' , '' , 1 , 0) [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:47:00+08:00 ] 127.0.0.1 GET /admin/autocode/indexview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/indexview' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_member` [ RunTime:0.017000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:53:12+08:00 ] 127.0.0.1 GET /admin/autocode/createview.html?spm=m-43-44-47&open_type=modal
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/createview' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code` WHERE  `is_deleted` = 0 ORDER BY id desc [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:53:17+08:00 ] 127.0.0.1 POST /admin/autocode/createtable.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/createtable' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code_fields` WHERE  `id` = 46 LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] CREATE TABLE IF NOT EXISTS web_member(
+		id int(11) NOT NULL AUTO_INCREMENT,is_deleted int(2) DEFAULT 0,
+		PRIMARY key(id)) [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_member` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] alter table web_member add COLUMN name varchar(30) DEFAULT "" COMMENT '会员名称'; [ RunTime:0.051000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT `title` FROM `web_auto_code` WHERE  `is_deleted` = 0  AND `controller` = 'Member' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code_fields` WHERE  `dbname` = 'member'  AND `is_search` = 1  AND `is_deleted` = 0 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:53:17+08:00 ] 127.0.0.1 GET /admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (2,4)  AND `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY sort asc,id asc [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:53:17+08:00 ] 127.0.0.1 GET /admin/autocode/indexview.html?spm=m-43-44-47
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/autocode/indexview' LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_auto_code_fields` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_auto_code_fields` WHERE  `is_deleted` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] show tables like 'web_member'; [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_member` [ RunTime:0.016000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:55:53+08:00 ] 127.0.0.1 GET /admin/menu/index.html?spm=m-1-10-2
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/menu/index' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` ORDER BY sort asc,id asc [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-03T18:57:42+08:00 ] 127.0.0.1 GET /admin/node/index.html?spm=m-1-11-6
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/node/index' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000000s ]

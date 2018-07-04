@@ -1,0 +1,37 @@
+SET FOREIGN_KEY_CHECKS=0;-- --
+DROP TABLE IF EXISTS `wechat_fans`;-- --
+CREATE TABLE `wechat_fans` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `appid` char(50) DEFAULT '' COMMENT '公众号Appid',
+  `unionid` char(100) DEFAULT '' COMMENT 'unionid',
+  `openid` char(100) DEFAULT '' COMMENT '用户的标识,对当前公众号唯一',
+  `spread_openid` char(100) DEFAULT '' COMMENT '推荐人OPENID',
+  `spread_at` datetime DEFAULT NULL COMMENT '推荐时间',
+  `tagid_list` varchar(100) DEFAULT '' COMMENT '标签id',
+  `is_black` tinyint(1) unsigned DEFAULT '0' COMMENT '是否为黑名单用户',
+  `subscribe` tinyint(1) unsigned DEFAULT '0' COMMENT '用户是否关注该公众号(0:未关注, 1:已关注)',
+  `nickname` varchar(200) DEFAULT '' COMMENT '用户的昵称',
+  `sex` tinyint(1) unsigned DEFAULT NULL COMMENT '用户的性别,值为1时是男性,值为2时是女性,值为0时是未知',
+  `country` varchar(50) DEFAULT '' COMMENT '用户所在国家',
+  `province` varchar(50) DEFAULT '' COMMENT '用户所在省份',
+  `city` varchar(50) DEFAULT '' COMMENT '用户所在城市',
+  `language` varchar(50) DEFAULT '' COMMENT '用户的语言,简体中文为zh_CN',
+  `headimgurl` varchar(500) DEFAULT '' COMMENT '用户头像',
+  `subscribe_time` bigint(20) unsigned DEFAULT '0' COMMENT '用户关注时间',
+  `subscribe_at` datetime DEFAULT NULL COMMENT '关注时间',
+  `remark` varchar(50) DEFAULT '' COMMENT '备注',
+  `expires_in` bigint(20) unsigned DEFAULT '0' COMMENT '有效时间',
+  `refresh_token` varchar(200) DEFAULT '' COMMENT '刷新token',
+  `access_token` varchar(200) DEFAULT '' COMMENT '访问token',
+  `subscribe_scene` varchar(200) DEFAULT '' COMMENT '扫码关注场景',
+  `qr_scene` varchar(100) DEFAULT '' COMMENT '二维码场景值',
+  `qr_scene_str` varchar(200) DEFAULT '' COMMENT '二维码场景内容',
+  `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`),
+  KEY `index_wechat_fans_spread_openid` (`spread_openid`) USING BTREE,
+  KEY `index_wechat_fans_openid` (`openid`) USING BTREE,
+  KEY `index_wechat_fans_unionid` (`unionid`),
+  KEY `index_wechat_fans_is_back` (`is_black`),
+  KEY `index_wechat_fans_subscribe` (`subscribe`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='微信粉丝';-- --
+            

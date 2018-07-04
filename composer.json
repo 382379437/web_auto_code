@@ -1,0 +1,6 @@
+{
+    "require": {
+        "zoujingli/pay-php-sdk": "^1.0",
+        "zoujingli/ip2region": "^1.0"
+    }
+}

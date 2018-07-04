@@ -1,0 +1,103 @@
+SET FOREIGN_KEY_CHECKS=0;-- --
+DROP TABLE IF EXISTS `store_express`;-- --
+CREATE TABLE `store_express` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `express_title` varchar(50) DEFAULT '' COMMENT '快递公司名称',
+  `express_code` varchar(50) DEFAULT '' COMMENT '快递公司代码',
+  `express_desc` text COMMENT '快递公司描述',
+  `status` tinyint(1) unsigned DEFAULT '1' COMMENT '状态(0.无效,1.有效)',
+  `sort` bigint(20) unsigned DEFAULT '0' COMMENT '排序',
+  `is_deleted` tinyint(1) unsigned DEFAULT '0' COMMENT '删除状态(1删除,0未删除)',
+  `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8 COMMENT='商城快递配置';-- --
+            INSERT INTO `store_express` VALUES(5,'AAE全球专递','aae','顺丰快递公司',0,0,0,'2017-09-12 11:53:40');-- --
+INSERT INTO `store_express` VALUES(6,'安捷快递','anjie','',0,0,0,'2017-09-13 15:27:26');-- --
+INSERT INTO `store_express` VALUES(7,'安信达快递','anxindakuaixi','',0,0,0,'2017-09-13 16:05:19');-- --
+INSERT INTO `store_express` VALUES(8,'彪记快递','biaojikuaidi','',0,0,0,'2017-09-13 16:05:26');-- --
+INSERT INTO `store_express` VALUES(9,'BHT','bht','',0,0,0,'2017-09-13 16:05:37');-- --
+INSERT INTO `store_express` VALUES(10,'百福东方国际物流','baifudongfang','',0,0,0,'2017-09-13 16:05:41');-- --
+INSERT INTO `store_express` VALUES(11,'中国东方（COE）','coe','',0,0,0,'2017-09-13 16:05:48');-- --
+INSERT INTO `store_express` VALUES(12,'长宇物流','changyuwuliu','',0,0,0,'2017-09-13 16:05:58');-- --
+INSERT INTO `store_express` VALUES(13,'大田物流','datianwuliu','',0,0,0,'2017-09-13 16:06:06');-- --
+INSERT INTO `store_express` VALUES(14,'德邦物流','debangwuliu','',1,1,0,'2017-09-13 16:06:14');-- --
+INSERT INTO `store_express` VALUES(15,'DHL','dhl','',0,0,0,'2017-09-13 16:06:24');-- --
+INSERT INTO `store_express` VALUES(16,'DPEX','dpex','',0,0,0,'2017-09-13 16:06:29');-- --
+INSERT INTO `store_express` VALUES(17,'d速快递','dsukuaidi','',0,0,0,'2017-09-13 16:06:34');-- --
+INSERT INTO `store_express` VALUES(18,'递四方','disifang','',0,0,0,'2017-09-13 16:06:40');-- --
+INSERT INTO `store_express` VALUES(19,'EMS快递','ems','',1,0,0,'2017-09-13 16:06:47');-- --
+INSERT INTO `store_express` VALUES(20,'FEDEX（国外）','fedex','',0,0,0,'2017-09-13 16:06:56');-- --
+INSERT INTO `store_express` VALUES(21,'飞康达物流','feikangda','',0,0,0,'2017-09-13 16:07:03');-- --
+INSERT INTO `store_express` VALUES(22,'凤凰快递','fenghuangkuaidi','',0,0,0,'2017-09-13 16:07:10');-- --
+INSERT INTO `store_express` VALUES(23,'飞快达','feikuaida','',0,0,0,'2017-09-13 16:07:16');-- --
+INSERT INTO `store_express` VALUES(24,'国通快递','guotongkuaidi','',0,0,0,'2017-09-13 16:07:27');-- --
+INSERT INTO `store_express` VALUES(25,'港中能达物流','ganzhongnengda','',0,0,0,'2017-09-13 16:07:33');-- --
+INSERT INTO `store_express` VALUES(26,'广东邮政物流','guangdongyouzhengwuliu','',0,0,0,'2017-09-13 16:08:22');-- --
+INSERT INTO `store_express` VALUES(27,'共速达','gongsuda','',0,0,0,'2017-09-13 16:08:48');-- --
+INSERT INTO `store_express` VALUES(28,'汇通快运','huitongkuaidi','',0,0,0,'2017-09-13 16:08:56');-- --
+INSERT INTO `store_express` VALUES(29,'恒路物流','hengluwuliu','',0,0,0,'2017-09-13 16:09:02');-- --
+INSERT INTO `store_express` VALUES(30,'华夏龙物流','huaxialongwuliu','',0,0,0,'2017-09-13 16:09:12');-- --
+INSERT INTO `store_express` VALUES(31,'海红','haihongwangsong','',0,0,0,'2017-09-13 16:09:20');-- --
+INSERT INTO `store_express` VALUES(32,'海外环球','haiwaihuanqiu','',0,0,0,'2017-09-13 16:09:27');-- --
+INSERT INTO `store_express` VALUES(33,'佳怡物流','jiayiwuliu','',0,0,0,'2017-09-13 16:09:35');-- --
+INSERT INTO `store_express` VALUES(34,'京广速递','jinguangsudikuaijian','',0,0,0,'2017-09-13 16:09:42');-- --
+INSERT INTO `store_express` VALUES(35,'急先达','jixianda','',0,0,0,'2017-09-13 16:09:49');-- --
+INSERT INTO `store_express` VALUES(36,'佳吉物流','jjwl','',0,0,0,'2017-09-13 16:10:01');-- --
+INSERT INTO `store_express` VALUES(37,'加运美物流','jymwl','',0,0,0,'2017-09-13 16:10:13');-- --
+INSERT INTO `store_express` VALUES(38,'金大物流','jindawuliu','',0,0,0,'2017-09-13 16:10:22');-- --
+INSERT INTO `store_express` VALUES(39,'嘉里大通','jialidatong','',0,0,0,'2017-09-13 16:10:33');-- --
+INSERT INTO `store_express` VALUES(40,'晋越快递','jykd','',0,0,0,'2017-09-13 16:10:40');-- --
+INSERT INTO `store_express` VALUES(41,'快捷速递','kuaijiesudi','',0,0,0,'2017-09-13 16:10:49');-- --
+INSERT INTO `store_express` VALUES(42,'联邦快递（国内）','lianb','',0,0,0,'2017-09-13 16:10:58');-- --
+INSERT INTO `store_express` VALUES(43,'联昊通物流','lianhaowuliu','',0,0,0,'2017-09-13 16:11:07');-- --
+INSERT INTO `store_express` VALUES(44,'龙邦物流','longbanwuliu','',0,0,0,'2017-09-13 16:11:15');-- --
+INSERT INTO `store_express` VALUES(45,'立即送','lijisong','',0,0,0,'2017-09-13 16:11:25');-- --
+INSERT INTO `store_express` VALUES(46,'乐捷递','lejiedi','',0,0,0,'2017-09-13 16:11:36');-- --
+INSERT INTO `store_express` VALUES(47,'民航快递','minghangkuaidi','',0,0,0,'2017-09-13 16:11:45');-- --
+INSERT INTO `store_express` VALUES(48,'美国快递','meiguokuaidi','',0,0,0,'2017-09-13 16:11:53');-- --
+INSERT INTO `store_express` VALUES(49,'门对门','menduimen','',0,0,0,'2017-09-13 16:12:01');-- --
+INSERT INTO `store_express` VALUES(50,'OCS','ocs','',0,0,0,'2017-09-13 16:12:10');-- --
+INSERT INTO `store_express` VALUES(51,'配思货运','peisihuoyunkuaidi','',0,0,0,'2017-09-13 16:12:18');-- --
+INSERT INTO `store_express` VALUES(52,'全晨快递','quanchenkuaidi','',0,0,0,'2017-09-13 16:12:26');-- --
+INSERT INTO `store_express` VALUES(53,'全峰快递','quanfengkuaidi','',0,0,0,'2017-09-13 16:12:34');-- --
+INSERT INTO `store_express` VALUES(54,'全际通物流','quanjitong','',0,0,0,'2017-09-13 16:12:41');-- --
+INSERT INTO `store_express` VALUES(55,'全日通快递','quanritongkuaidi','',0,0,0,'2017-09-13 16:12:49');-- --
+INSERT INTO `store_express` VALUES(56,'全一快递','quanyikuaidi','',0,0,0,'2017-09-13 16:12:56');-- --
+INSERT INTO `store_express` VALUES(57,'如风达','rufengda','',0,0,0,'2017-09-13 16:13:03');-- --
+INSERT INTO `store_express` VALUES(58,'三态速递','santaisudi','',0,0,0,'2017-09-13 16:13:15');-- --
+INSERT INTO `store_express` VALUES(59,'盛辉物流','shenghuiwuliu','',0,0,0,'2017-09-13 16:13:22');-- --
+INSERT INTO `store_express` VALUES(60,'申通','shentong','',0,0,0,'2017-09-13 16:13:34');-- --
+INSERT INTO `store_express` VALUES(61,'顺丰','shunfeng','',1,0,0,'2017-09-13 16:13:41');-- --
+INSERT INTO `store_express` VALUES(62,'速尔物流','sue','',0,0,0,'2017-09-13 16:13:48');-- --
+INSERT INTO `store_express` VALUES(63,'盛丰物流','shengfeng','',0,0,0,'2017-09-13 16:13:55');-- --
+INSERT INTO `store_express` VALUES(64,'赛澳递','saiaodi','',0,0,0,'2017-09-13 16:14:02');-- --
+INSERT INTO `store_express` VALUES(65,'天地华宇','tiandihuayu','',0,0,0,'2017-09-13 16:14:11');-- --
+INSERT INTO `store_express` VALUES(66,'天天快递','tiantian','',0,0,0,'2017-09-13 16:14:19');-- --
+INSERT INTO `store_express` VALUES(67,'TNT','tnt','',0,0,0,'2017-09-13 16:14:26');-- --
+INSERT INTO `store_express` VALUES(68,'UPS','ups','',0,0,0,'2017-09-13 16:14:29');-- --
+INSERT INTO `store_express` VALUES(69,'万家物流','wanjiawuliu','',0,0,0,'2017-09-13 16:14:37');-- --
+INSERT INTO `store_express` VALUES(70,'文捷航空速递','wenjiesudi','',0,0,0,'2017-09-13 16:14:46');-- --
+INSERT INTO `store_express` VALUES(71,'伍圆','wuyuan','',0,0,0,'2017-09-13 16:14:52');-- --
+INSERT INTO `store_express` VALUES(72,'万象物流','wxwl','',0,0,0,'2017-09-13 16:15:00');-- --
+INSERT INTO `store_express` VALUES(73,'新邦物流','xinbangwuliu','',0,0,0,'2017-09-13 16:15:06');-- --
+INSERT INTO `store_express` VALUES(74,'信丰物流','xinfengwuliu','',0,0,0,'2017-09-13 16:15:15');-- --
+INSERT INTO `store_express` VALUES(75,'亚风速递','yafengsudi','',0,0,0,'2017-09-13 16:15:23');-- --
+INSERT INTO `store_express` VALUES(76,'一邦速递','yibangwuliu','',0,0,0,'2017-09-13 16:15:30');-- --
+INSERT INTO `store_express` VALUES(77,'优速物流','youshuwuliu','',0,0,0,'2017-09-13 16:15:36');-- --
+INSERT INTO `store_express` VALUES(78,'邮政包裹挂号信','youzhengguonei','',0,3,0,'2017-09-13 16:15:44');-- --
+INSERT INTO `store_express` VALUES(79,'邮政国际包裹挂号信','youzhengguoji','',0,2,0,'2017-09-13 16:15:51');-- --
+INSERT INTO `store_express` VALUES(80,'远成物流','yuanchengwuliu','',0,0,0,'2017-09-13 16:15:57');-- --
+INSERT INTO `store_express` VALUES(81,'圆通速递','yuantong','',1,1,0,'2017-09-13 16:16:03');-- --
+INSERT INTO `store_express` VALUES(82,'源伟丰快递','yuanweifeng','',0,0,0,'2017-09-13 16:16:10');-- --
+INSERT INTO `store_express` VALUES(83,'元智捷诚快递','yuanzhijiecheng','',0,0,0,'2017-09-13 16:16:17');-- --
+INSERT INTO `store_express` VALUES(84,'韵达快运','yunda','',0,0,0,'2017-09-13 16:16:24');-- --
+INSERT INTO `store_express` VALUES(85,'运通快递','yuntongkuaidi','',0,0,0,'2017-09-13 16:16:33');-- --
+INSERT INTO `store_express` VALUES(86,'越丰物流','yuefengwuliu','',0,0,0,'2017-09-13 16:16:40');-- --
+INSERT INTO `store_express` VALUES(87,'源安达','yad','',0,0,0,'2017-09-13 16:16:47');-- --
+INSERT INTO `store_express` VALUES(88,'银捷速递','yinjiesudi','',0,0,0,'2017-09-13 16:16:56');-- --
+INSERT INTO `store_express` VALUES(89,'宅急送','zhaijisong','',0,0,0,'2017-09-13 16:17:03');-- --
+INSERT INTO `store_express` VALUES(90,'中铁快运','zhongtiekuaiyun','',0,0,0,'2017-09-13 16:17:10');-- --
+INSERT INTO `store_express` VALUES(91,'中通速递','zhongtong','',0,0,0,'2017-09-13 16:17:16');-- --
+INSERT INTO `store_express` VALUES(92,'中邮物流','zhongyouwuliu','',0,0,0,'2017-09-13 16:17:27');-- --
+INSERT INTO `store_express` VALUES(93,'忠信达','zhongxinda','',0,0,0,'2017-09-13 16:17:34');-- --
+INSERT INTO `store_express` VALUES(94,'芝麻开门','zhimakaimen','',0,0,0,'2017-09-13 16:17:41');-- --
