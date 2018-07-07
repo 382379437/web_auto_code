@@ -16,6 +16,8 @@ namespace think;
 
 // 加载基础文件
 require __DIR__ . '/thinkphp/base.php';
+// 定义应用目录
+define('APP_PATH', __DIR__ . '/application/');
 
 define('STATIC_PATH','');//js,css资源文件路径
 $path = str_replace('/index.php', '', str_replace('\\', '/', __FILE__));

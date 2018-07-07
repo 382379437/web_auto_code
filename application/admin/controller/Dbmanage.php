@@ -4,7 +4,7 @@
  * ==【please stick to finishing this thing】==
  * ============================================
  * filename：xxx.php
- * description： EasyDBM数据备份
+ * description： EasyDBM数据备份[如果需要修改源码，请尽量在你搞懂上下文之后再修改！]
  * 1 /admin/Dbmanage/back 数据备份;
  * 2 /admin/Dbmanage/backup/数据恢复
  * 使用说明：
@@ -20,20 +20,29 @@ namespace app\admin\controller;
 
 use think\Controller;
 use think\Db;
+use think\Request;
 
 class Dbmanage extends Controller
 {
-    protected $backup_path = ROOT_PATH_PRO.'/runtime/backup/';
+    protected $backup_path = '';
+    function __construct(Request $request = null)
+    {
+        parent::__construct($request);
+        $this->backup_path = APP_PATH.'../runtime/backup/';
+    }
     /**
      * description：备份网站数据库[windows/linux 通用]
      * author：wanghua
      * @return \think\response\Json
      */
     function backup(){
-        //清空
-        if(!$this->deleteFile($this->backup_path)){
-            return json(['code'=>201, 'msg'=> '备份结束：清空原备份文件失败']);
+        //清空原有备份-根据项目自身情况设定是否删除
+        if(config('app_debug')){
+            if(!$this->deleteFile($this->backup_path)){
+                return json(['code'=>201, 'msg'=> '备份结束：清空原备份文件失败']);
+            }
         }
+
         //准备备份
         set_time_limit(0);
         $tables = getTables();
@@ -43,7 +52,7 @@ class Dbmanage extends Controller
             //建表sql
             $create_sql = Db::query('SHOW CREATE TABLE '.$table_name);
             //数据
-            $data = Db::name($table_name)->select();
+            $data = Db::table($table_name)->select();
             $sql = '';
             foreach ($data as $d=>$r){
                 $keys = '';
@@ -65,7 +74,7 @@ class Dbmanage extends Controller
             if(!file_exists($backpath)){
                 mkdir($backpath, 0777);
             }
-            $backpath .= $table_name.'-'.date('YmdHis').'.sql';
+            $backpath .= $table_name.'-'.date('Ymd').'.sql';
 
             $c_sql = "SET FOREIGN_KEY_CHECKS=0;-- --
 DROP TABLE IF EXISTS `{$table_name}`;-- --"."
@@ -162,6 +171,7 @@ DROP TABLE IF EXISTS `{$table_name}`;-- --"."
             $this->assign('render', $data['render']);
             $this->assign('count', $data['count']);
             $this->assign('sql', $data['sql']);
+            $this->assign('his_sql', $data['his_sql']);
 
         }catch (\Exception $e){
             $res = $e->getMessage();
@@ -181,6 +191,9 @@ DROP TABLE IF EXISTS `{$table_name}`;-- --"."
         $page = empty(input('page'))?1:input('page');//当前页
         $page = $page*1 < 1 ?1:$page*1;
         $sql = input('sql');
+        //存储历史sql并返回
+        $his_sql = $this->saveHis($sql);
+
         if(false !== strpos($sql, ';')){
             $sql = substr($sql, 0, strlen($sql)-1);
         }
@@ -220,9 +233,24 @@ DROP TABLE IF EXISTS `{$table_name}`;-- --"."
         $arr['render'] = $render;
         $arr['sql'] = $sql;
         $arr['count'] = $count;
+        $arr['his_sql'] = $his_sql;
         return $arr;
     }
 
+    //历史记录
+    protected function saveHis($sql){
+        $sql_his_arr = cookie('sql_his_arr')?cookie('sql_his_arr'):'{}';
+        $sql_his_arr = json_decode($sql_his_arr, true);
+        array_push($sql_his_arr, $sql);
+        cookie('sql_his_arr', json_encode($sql_his_arr));
+        //去重
+        $sql_his_arr = array_unique($sql_his_arr);
+        //排序
+        krsort($sql_his_arr);
+        //截取
+        return array_slice($sql_his_arr,0, 10);
+    }
+    //数据总数
     protected function getCount($sql){
         $sql_ = $sql;
         if(strpos($sql, 'limit')){

@@ -1,3 +1,0 @@
----------------------------------------------------------------
-[ 2018-07-04T14:41:26+08:00 ] 127.0.0.1 POST /admin/dbmanage/backup.html
-[ error ] [8]Array to string conversion[E:\whua\projects\web_auto_code\application\admin\controller\Dbmanage.php:80]

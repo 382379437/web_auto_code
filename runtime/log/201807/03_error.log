@@ -1,6 +1,0 @@
----------------------------------------------------------------
-[ 2018-07-03T16:41:56+08:00 ] 127.0.0.1 GET /wechat/config/index.html?spm=m-17-18-19
-[ error ] Soap Error. Call getConfig Method --- Internal Server Error
----------------------------------------------------------------
-[ 2018-07-03T16:54:25+08:00 ] 127.0.0.1 GET /wechat/config/index.html?spm=m-17-18-19
-[ error ] Soap Error. Call getConfig Method --- Internal Server Error

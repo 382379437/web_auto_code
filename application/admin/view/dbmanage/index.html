@@ -75,6 +75,9 @@
             color: grey;
             cursor:pointer;
         }
+        .his-sql{
+            height: 24px;
+        }
     </style>
 </head>
 <body>
@@ -86,6 +89,14 @@
                 <input type="button" sql="show databases;" value="查看数据库" onclick="quickKey(this, 1)" title="查看有哪些数据库">
                 <input type="button" sql="show tables;" value="所有表" onclick="quickKey(this, 1)" title="查询当前数据库所有表名称">
                 <input type="button" sql="select * from tables ;" value="查看某表" onclick="quickKey(this, 0)" title="记得把sql中的tables换成你需要的表名">
+                <select class="his-sql" onchange="quickKey(this, 0)">
+                    <option value="">历史</option>
+                    {notempty name='his_sql'}
+                    {volist name='his_sql' id='vo'}
+                    <option value="{$vo}">{$key}-{$vo}</option>
+                    {/volist}
+                    {/notempty}
+                </select>
                 <br/>
                 <textarea autofocus  class="middle-txt-code" name="sql">{$sql?$sql:'show databases;'}</textarea>
                 <br/>
@@ -156,7 +167,11 @@
     });
 
     var quickKey = function (obj, isSub) {
-        $('.middle-txt-code').val($(obj).attr('sql'));
+        if($(obj).prop('tagName') == 'SELECT'){
+            $('.middle-txt-code').val($(obj).val());
+        }else{
+            $('.middle-txt-code').val($(obj).attr('sql'));
+        }
         if(isSub){
             $('input[type="submit"]').click();
         }
