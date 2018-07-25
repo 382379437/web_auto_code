@@ -84,6 +84,19 @@ class Autocode extends BasicAdmin
     }
 
     /**
+     * description：处理表名
+     * author：wanghua
+     * @param $dbname
+     */
+    protected function dealdbname($dbname){
+        $arr = explode('_', $dbname);
+        $str = '';
+        foreach ($arr as $k=>$v){
+            $str.=ucfirst($v);
+        }
+        return $str;
+    }
+    /**
      * description：创建控制器文件
      * author：wanghua
      * @param $control
@@ -94,7 +107,7 @@ class Autocode extends BasicAdmin
         //处理默认前缀
         $fix = substr(ucfirst($this->myfix), 0, strlen(ucfirst($this->myfix))-1);
         //默认指定表名
-        $mytable = $fix.ucfirst($dbname);
+        $mytable = $fix.$this->dealdbname($dbname);
         //处理控制器名
         $control = ucfirst($control);
         //搜索项
