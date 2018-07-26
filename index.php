@@ -22,4 +22,5 @@ define('APP_PATH', __DIR__ . '/application/');
 $path = str_replace('/index.php', '', str_replace('\\', '/', __FILE__));
 define('ROOT_PATH_PRO',$path);//项目真实根路径
 // 执行应用并响应
+// 执行应用并响应2
 Container::get('app', [__DIR__ . '/application/'])->run()->send();
