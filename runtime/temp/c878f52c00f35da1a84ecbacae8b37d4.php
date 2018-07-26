@@ -1,10 +1,11 @@
+<?php /*a:1:{s:92:"E:\whua\projects\web_auto_code_branch\web_auto_code/application/admin/view\tools\canvas.html";i:1531125917;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>canvas</title>
-    <link href="__STATIC__/plugs/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="__STATIC__/plugs/layui/css/layui.css" rel="stylesheet">
+    <link href="/static/plugs/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/plugs/layui/css/layui.css" rel="stylesheet">
     <style>
         .main{
             width: 90%;
@@ -57,8 +58,8 @@
     </canvas>
 </div>
 </body>
-<script src="__STATIC__/plugs/jquery/jquery.min.js"></script>
-<script src="__STATIC__/plugs/layui/layui.js"></script>
+<script src="/static/plugs/jquery/jquery.min.js"></script>
+<script src="/static/plugs/layui/layui.js"></script>
 <script>
     $(function () {
         xing("xingxing");
@@ -202,26 +203,6 @@
         }
         c.stroke();
         // console.log(ar);
-    }
-</script>
-
-<script>
-    $(function () {
-        canvasTimer();
-    });
-    //定时刷新canvas
-    var obj;
-    var canvasTimer = function () {
-        obj = $('#canvas');
-        setInterval(function (args) {
-            $('#canvas').remove();
-            setTimeout(function () {
-                $(obj).css({'display':'none'});
-                $('.main').append(obj);
-                $(obj).fadeIn(800);
-            },1000);
-
-        },5000);
     }
 </script>
 </html>

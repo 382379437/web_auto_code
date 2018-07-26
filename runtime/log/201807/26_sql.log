@@ -1,0 +1,325 @@
+---------------------------------------------------------------
+[ 2018-07-26T14:06:47+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:49+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:50+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:50+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:51+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:51+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:51+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:51+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:52+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:52+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:52+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:53+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:53+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:53+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:53+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:54+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:54+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:54+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:54+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:55+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.019000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:55+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:55+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:55+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:55+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:56+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:56+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:56+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:56+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:56+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:57+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:57+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.018000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:57+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:57+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:57+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:58+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:58+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:58+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:59+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:59+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:06:59+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:07:00+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:07:00+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:07:00+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:07:00+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:07:00+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:07:01+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:07:01+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:07:01+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:07:01+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:07:01+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:07:01+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:07:02+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:07:02+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:07:02+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:07:02+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:07:02+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:07:03+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:07:03+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:07:03+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:28:15+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.019000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:32:33+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:32:55+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:33:47+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:34:51+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2018-07-26T14:35:07+08:00 ] 127.0.0.1 GET /admin/tools/canvas.html?timeToDate=1532577354&dateToTime=2018-07-26%2011:55:54&createErweima=www.baidu.com&isEmail=382379417@qq.com&isMobile=18290416011&readBase64Img=&weather=%E9%87%8D%E5%BA%86
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=web_auto_code;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/tools/canvas' LIMIT 1 [ RunTime:0.001000s ]
