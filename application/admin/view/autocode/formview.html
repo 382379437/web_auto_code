@@ -96,13 +96,15 @@
     <div class="layui-form-item">
         <label class="layui-form-label">表单可选值</label>
         <div class="layui-input-block">
-            <input type="text" name="form_value" value='{$vo.form_value|default=""}' class="layui-input" placeholder="select和radio eg：1:男,2:女 用英文,和:隔开。web_tablename,key-val:key-val:...... ">
+            <input type="text" name="form_value" value='{$vo.form_value|default=""}'
+                   class="layui-input" placeholder="select和radio eg：1:男,2:女 用英文,和:隔开。使用表数据：web_area,area_id|=|0 逗号后面是条件，用'|'隔开" title="表单可选值，取值字段，在列表搜索组合起来使用">
         </div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">取值字段</label>
         <div class="layui-input-block">
-            <input type="text" name="res_fields_name" value='{$vo.res_fields_name|default=""}' class="layui-input" placeholder="取值字段 对应可选值">
+            <input type="text" name="res_fields_name" value='{$vo.res_fields_name|default=""}'
+                   class="layui-input" placeholder="取值字段 对应表单可选值,eg : id-title" title="表单可选值，取值字段，在列表搜索组合起来使用">
         </div>
     </div>
     <div class="layui-form-item">
@@ -115,13 +117,13 @@
     <div class="layui-form-item">
         <label class="layui-form-label">是否自动提示</label>
         <div class="layui-input-block">
-            <input type="text" name="is_auto_tips" value='{$vo.is_auto_tips|default=""}' class="layui-input" placeholder="自动提示参数 eg：/admin/label/getlabel-id,title">
+            <input type="text" name="is_auto_tips" value='{$vo.is_auto_tips|default=""}' class="layui-input" placeholder="自动提示参数 自定义eg：/admin/label/getlabel-id,title">
         </div>
     </div>
 
     <div class="layui-form-item">
-        <label class="layui-form-label">是否搜索</label>
-        <div class="layui-input-block">
+        <label class="layui-form-label">在列表搜索</label>
+        <div class="layui-input-block" title="表单可选值，取值字段，在列表搜索，可组合起来使用">
             <select name="is_search">
                 <option value="0" {:isset($vo.is_search)&&$vo.is_search==='0'?'selected':''}>否</option>
                 <option value="1" {:isset($vo.is_search)&&$vo.is_search=='1'?'selected':''}>是</option>

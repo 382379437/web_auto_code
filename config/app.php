@@ -5,7 +5,7 @@ return [
     // 应用调试模式
     'app_debug'              => true,
     // 应用Trace
-    'app_trace'              => false,
+    'app_trace'              => true,
     // 应用模式状态
     'app_status'             => '',
     // 是否支持多模块
@@ -98,6 +98,6 @@ return [
     // 异常处理handle类 留空使用 \think\exception\Handle
     'exception_handle'       => '',
     'view_replace_str' => [
-        '__STATIC__' => STATIC_PATH . '/static'
+        '__STATIC__' =>  APP_PATH . '../static'
     ],
 ];

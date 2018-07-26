@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-07-04 14:44:06
+Date: 2018-07-26 10:00:38
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -109,7 +109,7 @@ CREATE TABLE `system_log` (
   `content` text NOT NULL COMMENT '操作内容描述',
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='系统操作日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='系统操作日志表';
 
 -- ----------------------------
 -- Records of system_log
@@ -120,6 +120,10 @@ INSERT INTO `system_log` VALUES ('3', '127.0.0.1', 'admin/login/index', 'admin',
 INSERT INTO `system_log` VALUES ('4', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2018-07-04 09:28:28');
 INSERT INTO `system_log` VALUES ('5', '127.0.0.1', 'admin/config/index', 'admin', '系统管理', '系统参数配置成功', '2018-07-04 09:29:38');
 INSERT INTO `system_log` VALUES ('6', '127.0.0.1', 'admin/config/index', 'admin', '系统管理', '系统参数配置成功', '2018-07-04 14:43:28');
+INSERT INTO `system_log` VALUES ('7', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2018-07-23 16:00:22');
+INSERT INTO `system_log` VALUES ('8', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2018-07-25 10:06:52');
+INSERT INTO `system_log` VALUES ('9', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2018-07-25 18:46:32');
+INSERT INTO `system_log` VALUES ('10', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2018-07-26 09:53:50');
 
 -- ----------------------------
 -- Table structure for `system_menu`
@@ -159,11 +163,11 @@ INSERT INTO `system_menu` VALUES ('11', '1', '访问权限', '', '', '#', '', '_
 INSERT INTO `system_menu` VALUES ('16', '1', '日志管理', '', '', '#', '', '_self', '400', '1', '0', '2018-02-10 16:31:15');
 INSERT INTO `system_menu` VALUES ('43', '0', '网站管理', '', '', '#', '', '_self', '0', '1', '0', '2018-05-09 15:59:34');
 INSERT INTO `system_menu` VALUES ('44', '43', '自动生成配置', '', '', '#', '', '_self', '0', '1', '0', '2018-05-09 15:59:52');
-INSERT INTO `system_menu` VALUES ('45', '44', '测试', '', '', 'admin/test/index', '', '_self', '0', '0', '0', '2018-05-09 16:00:33');
+INSERT INTO `system_menu` VALUES ('45', '44', '工具合集', '', '', 'admin/tools/index', '', '_self', '0', '1', '0', '2018-05-09 16:00:33');
 INSERT INTO `system_menu` VALUES ('46', '44', 'AutocodeController', '', '', 'admin/Autocode/index', '', '_self', '0', '1', '0', '2018-05-09 16:01:11');
 INSERT INTO `system_menu` VALUES ('47', '44', 'AutocodeView', '', '', 'admin/Autocode/indexview', '', '_self', '0', '1', '0', '2018-05-09 16:01:53');
 INSERT INTO `system_menu` VALUES ('50', '43', '会员管理', '', '', '#', '', '_self', '0', '1', '0', '2018-07-04 14:30:43');
-INSERT INTO `system_menu` VALUES ('51', '50', '会员列表', '', '', 'admin/member/index', '', '_self', '0', '1', '0', '2018-07-04 14:31:07');
+INSERT INTO `system_menu` VALUES ('51', '50', '会员列表', '', '', 'websit/member/index', '', '_self', '0', '1', '0', '2018-07-04 14:31:07');
 
 -- ----------------------------
 -- Table structure for `system_node`
@@ -287,7 +291,7 @@ CREATE TABLE `system_user` (
 -- ----------------------------
 -- Records of system_user
 -- ----------------------------
-INSERT INTO `system_user` VALUES ('10000', 'admin', '21232f297a57a5a743894a0e4a801fc3', '22222222', '', '', '', '22976', '2018-07-04 09:28:27', '1', '2,4', '0', '0', '2015-11-13 15:14:22');
+INSERT INTO `system_user` VALUES ('10000', 'admin', '21232f297a57a5a743894a0e4a801fc3', '22222222', '', '', '', '22980', '2018-07-26 09:53:50', '1', '2,4', '0', '0', '2015-11-13 15:14:22');
 
 -- ----------------------------
 -- Table structure for `web_area`
@@ -43862,12 +43866,16 @@ CREATE TABLE `web_auto_code_fields` (
   `is_many_img` varchar(10) DEFAULT '' COMMENT '是否多图上传 one 单图；mut 多图',
   `is_auto_tips` varchar(200) DEFAULT '0' COMMENT '是否自动提示: 0 或空 否，其它 是，且为数据访问url eg：/admin/label/getlabel-id,title',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=utf8 COMMENT='自动创建表字段';
+) ENGINE=MyISAM AUTO_INCREMENT=52 DEFAULT CHARSET=utf8 COMMENT='自动创建表字段';
 
 -- ----------------------------
 -- Records of web_auto_code_fields
 -- ----------------------------
 INSERT INTO `web_auto_code_fields` VALUES ('47', 'member', 'name', 'varchar', '50', '0', '1', '1', '会员名称', '', '1', 'input', '', '', '0', '0', '', '');
+INSERT INTO `web_auto_code_fields` VALUES ('48', 'member', 'area', 'int', '11', '0', '1', '1', '区域', '0', '1', 'select', 'web_area,area_id|&gt;|0', 'area_id-area_name', '1', '0', '', '');
+INSERT INTO `web_auto_code_fields` VALUES ('49', 'member', 'provice', 'varchar', '50', '0', '1', '1', '省（下拉框）', '', '1', 'select', 'web_area,parentid|=|0', 'area_id-area_name', '0', '0', '', '');
+INSERT INTO `web_auto_code_fields` VALUES ('50', 'member', 'city', 'int', '11', '0', '1', '1', '市', '', '0', 'select', 'web_area', 'area_id-area_name', '0', '0', '', '');
+INSERT INTO `web_auto_code_fields` VALUES ('51', 'member', 'addr', 'varchar', '30', '0', '1', '1', '居住地(自动提示)', '', '1', 'input', '', '', '0', '0', '', '/websit/member/getarea-area_id,area_name');
 
 -- ----------------------------
 -- Table structure for `web_member`
@@ -43877,11 +43885,15 @@ CREATE TABLE `web_member` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `is_deleted` int(2) DEFAULT '0',
   `name` varchar(50) DEFAULT '' COMMENT '会员名称',
+  `create_time` int(11) DEFAULT NULL,
+  `provice` varchar(50) DEFAULT '' COMMENT '省（下拉框）',
+  `city` int(11) DEFAULT '0' COMMENT '市',
+  `addr` varchar(30) DEFAULT '' COMMENT '居住地(自动提示)',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of web_member
 -- ----------------------------
-INSERT INTO `web_member` VALUES ('1', '0', '张三');
-INSERT INTO `web_member` VALUES ('2', '0', '李四');
+INSERT INTO `web_member` VALUES ('1', '0', '张三', null, '11', '1', '4');
+INSERT INTO `web_member` VALUES ('2', '0', '李四', null, '1', '52993', '31');

@@ -11,12 +11,10 @@ use think\Exception;
 
 class Autocode extends BasicAdmin
 {
-    /**
-     * 指定当前数据表
-     * @var string
-     */
-    public $table = 'WebAutoCode';
-    protected $myfix = 'web_';//默认前缀
+    public $table = 'WebAutoCode';//指定当前数据表
+    protected $defFix = 'web_';//默认前缀
+    protected $defModule = 'websit';//默认模块 eg: admin、goods 不能与现有模块重复
+    protected $defControlDir = 'controller';//默认控制器目录 eg：home
 
     /**
      * description：列表
@@ -96,6 +94,17 @@ class Autocode extends BasicAdmin
         }
         return $str;
     }
+
+    /**
+     * description：创建默认模块目录
+     * author：wanghua
+     */
+    protected function createModuleDir(){
+        if($this->defModule != 'admin' || $this->defControlDir != 'controller'){
+            $file = ROOT_PATH_PRO.'/application/'.$this->defModule.'/'.$this->defControlDir;
+            if(!file_exists($file))mkdir($file,0777,true);
+        }
+    }
     /**
      * description：创建控制器文件
      * author：wanghua
@@ -105,11 +114,13 @@ class Autocode extends BasicAdmin
      */
     function createControllerCode($control, $title, $dbname){
         //处理默认前缀
-        $fix = substr(ucfirst($this->myfix), 0, strlen(ucfirst($this->myfix))-1);
+        $fix = substr(ucfirst($this->defFix), 0, strlen(ucfirst($this->defFix))-1);
         //默认指定表名
         $mytable = $fix.$this->dealdbname($dbname);
         //处理控制器名
         $control = ucfirst($control);
+        //检测并创建默认模块和控制器
+        $this->createModuleDir();
         //搜索项
         $search_fields = Db::name('WebAutoCodeFields')->where(['dbname'=>$dbname, 'is_search'=>1,'is_deleted'=>0])->select();
         if(!$search_fields){$search_fields=[];}
@@ -117,7 +128,7 @@ class Autocode extends BasicAdmin
 
         $str = "<?php
 
-namespace app\\admin\\controller;
+namespace app\\{$this->defModule}\\{$this->defControlDir};
 
 use controller\\BasicAdmin;
 use service\\DataService;
@@ -192,7 +203,7 @@ class $control extends BasicAdmin
     }
 }";
 
-        $file = ROOT_PATH_PRO.'/application/'.request()->module().'/controller';
+        $file = ROOT_PATH_PRO.'/application/'.$this->defModule.'/'.$this->defControlDir;
 
         if(!file_exists($file)){
             mkdir($file,0777,true);
@@ -296,7 +307,7 @@ class $control extends BasicAdmin
             $this->error('表名空');
         }
         //处理名字
-        $table_name = $this->myfix.$table_name;
+        $table_name = $this->defFix.$table_name;
         //验证表存在
         //$exits_table = "show tables like '{$table_name}";
         //if(Db::query($exits_table)){
@@ -393,10 +404,8 @@ class $control extends BasicAdmin
         $this->assign('type',$type);
 
         if($type == 1){
-
             return $this->fetch('templateindex');
         }else{
-
             return $this->fetch('templateform');
         }
     }
@@ -413,7 +422,7 @@ class $control extends BasicAdmin
         if(!$view_name || !$view_type)$this->error('参数错误');
 
         //创建视图位置
-        $path = ROOT_PATH_PRO.'/application/admin/view/'.$view_name;
+        $path = ROOT_PATH_PRO.'/application/'.$this->defModule.'/view/'.$view_name;
         //公共模板位置
         $temp_index_path = ROOT_PATH_PRO.'/application/admin/view/autocode/templateindex.html';
         $temp_form_path = ROOT_PATH_PRO.'/application/admin/view/autocode/templateform.html';
@@ -425,16 +434,12 @@ class $control extends BasicAdmin
         $path_index = $path.'/index.html';
 
         if($view_type == 1){
-            if(file_exists($path_index)){
-                $this->error('列表视图文件已存在，系统拒绝覆盖历史文件');
-            }
+            if(file_exists($path_index))$this->error('列表视图文件已存在，系统拒绝覆盖历史文件');
             //列表
             $html_str = file_get_contents($temp_index_path);
             file_put_contents($path_index, $html_str);
         }elseif($view_type == 2){
-            if(file_exists($path_form)){
-                $this->error('编辑视图文件已存在，系统拒绝覆盖历史文件');
-            }
+            if(file_exists($path_form))$this->error('编辑视图文件已存在，系统拒绝覆盖历史文件');
             //编辑
             $html_str = file_get_contents($temp_form_path);
             file_put_contents($path_form, $html_str);

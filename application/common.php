@@ -237,51 +237,57 @@ function getTables(){
  * @param $param web_goods:参数1-1,参数2-2,...
  * @return array
  */
-function getDataByTbName($form_val, $fieldsname=''){
+function getDataByTbName($form_val, $fieldsname='',$condition=[]){
     if(!$form_val){
         return [];
     }
     $valarr = explode(',', $form_val);
     if(empty($valarr[0]))return [];
     $tablename = $valarr[0];
-    if(empty($valarr[1])){
-        return [];
-    }
-    $param = $valarr[1];
     if(in_array($tablename, getTables())){
-        $arr = explode(':', $param);
-        if(empty($arr)){
-            throw new \think\Exception('params parsed error by ":" 。');
-        }
-        $condition = [];
-        foreach($arr as $k=>$v){
-            $t = explode('-', $v);
-            if(empty($t))continue;
-            if(empty($t[0]))throw new \think\Exception('params parsed error by "-" 。');
-            $condition[$t[0]] = $t[1];
-        }
         try{
-            return DB::name($tablename)->field($fieldsname)->where($condition)->select();
+            $obj = DB::table($tablename);
+            $obj->field($fieldsname);
+            //处理条件 area_id|>|0 ---字段|表达式|值
+            if($condition){
+                $arr = explode('|',htmlspecialchars_decode($condition));
+                $obj->where($arr[0],$arr[1],$arr[2]);
+            }
+            //限制最大100个option
+            $d = $obj->limit(100)->select();
+            return $d;
         }catch (\Exception $e){
             throw new \think\Exception($e.';'.$tablename.';'.json_encode($condition));
         }
     }
     return [];
 }
-
+/**
+ * description：获取项目根路径
+ * author：wanghua
+ */
+if (!function_exists('get_root_path')) {
+    function get_root_path(){
+        $str = str_replace('\\', '/', APP_PATH);
+        return $str.'..';
+    }
+}
 /**
  * description：处理 form_value 字段为数组
  * author：wh
  */
-function dealFormValueList($form_val, $fieldsname='id, title'){
+function dealFormValueList($form_val, $fieldsname='*'){
     if(!$form_val){
         return [];
     }
     $valarr = explode(',', $form_val);
     if(empty($valarr[0]))return [];
     if(in_array($valarr[0], getTables())){
-
-        return getDataByTbName($form_val, $fieldsname);
+        //处理成 字段a as id 字段b as title
+        $str_field = explode('-', $fieldsname);
+        if(empty($str_field[0]) || empty($str_field[1])){throw new Exception('表单可选值 字段格式错误');}
+        $fieldsname = $str_field[0].' as id,'.$str_field[1].' as title';
+        return getDataByTbName($form_val, $fieldsname,empty($valarr[1])?[]:$valarr[1]);
     }else{
         $r = [];
         foreach($valarr as $k => $v){
@@ -528,5 +534,182 @@ if (!function_exists('rand_str')) {
             $str .= $chars[ mt_rand(0, strlen($chars) - 1) ];
         }
         return $str;
+    }
+}
+
+if(!function_exists('arrArrToSort')){
+    /**
+     * description：php二维数组排序(升、降)
+     * author：wanghua
+     * @param $data 数据源(必须是二维数组)
+     * @param $field 要排序的字段(必须) eg：年龄或者价格
+     * @param bool $sort 排序方式
+     * @param bool $unique_field 指定唯一字段 eg：例如userID一般都是唯一的
+     * @return array 返回排序后的数据源
+     */
+    function arrArrToSort($data, $field, $sort=true, $unique_field){
+        //取出排序源
+        $field_arr_key = array_column($data, $unique_field);
+        $field_arr_val = array_column($data, $field);
+
+        $source_arr = [];
+        foreach ($field_arr_key as $key=>$val){
+            $source_arr[$val] = $field_arr_val[$key];
+        }
+
+        //排序
+        if($sort)arsort($source_arr);
+        else asort($source_arr) ;
+        //重组数据
+        $new_arr = [];
+        foreach ($source_arr as $k=>$v){
+            foreach ($data as $a=>$b){
+                if($k == $b[$unique_field]){
+                    array_push($new_arr, $b);
+                }
+            }
+        }
+        return $new_arr;
+    }
+}
+
+if(!function_exists('returnDateString')){
+    /**
+     * description：日期换算为 今天 昨天 2天前 一周前 一个月前 一年前
+     * author：wanghua
+     * @param $date 时间戳
+     */
+    function returnDateString($date){
+        $date = $date*1;
+        $arr = [
+            0=>'今天',
+            1=>'昨天',
+            2=>'前天',
+            7=>'一周前',
+            30=>'一个月前',
+            365=>'一年前',
+            -1=>'很久以前',
+        ];
+        //今天
+        $today = strtotime(date('Y-m-d'));
+        if(($date-$today)>=0){
+            return $arr[0];
+        }else if(($date-$today)<0 && ($today-$date)<=86400){
+            return $arr[1];
+        }else if(($date-$today)<0 && ($today-$date)<=86400*2){
+            return $arr[2];
+        }else if(($date-$today)<0 && ($today-$date)<=86400*7){
+            return $arr[7];
+        }else if(($date-$today)<0 && ($today-$date)<=86400*30){
+            return $arr[30];
+        }else if(($date-$today)<0 && ($today-$date)<=86400*365){
+            return $arr[365];
+        }
+        return $arr[-1];
+    }
+}
+
+
+if(!function_exists('keyValByArrArr')){
+    /**
+     * description：返回由二维数组的其中两个字段(键)组成的一维数组
+     * author：wanghua
+     */
+    function keyValByArrArr($data, $key, $key2){
+        $data = objToArray($data);
+        $arr = array_column($data, $key);
+        $arr2 = array_column($data, $key2);
+        $tmp = [];
+        foreach ($arr as $k=>$v){
+            $tmp[$v]=$arr2[$k];
+        }
+        return $tmp;
+    }
+}
+
+if(!function_exists('returnArrSomeOne')){
+    /**
+     * description：查找二维数组中某一条数据
+     * author：wanghua
+     */
+    function returnArrSomeOne($data, $field, $val){
+        foreach ($data as $k=>$v){
+            if($v[$field] == $val){
+                return $v;
+            }
+        }
+        return false;
+    }
+}
+if(!function_exists('getTabFieldByCon')){
+    /**
+     * description：查询某表某字段
+     * author：wanghua
+     * @param $table
+     * @param $field
+     */
+    function getTabFieldByCon($table, $field, $condition=[]){
+        if($condition)
+        {
+            $d = Db::table($table)->field($field)->where($condition)->find();
+            return $d[$field];
+        }
+        else
+        {
+            $d = Db::table($table)->field($field)->select();
+            return $d[$field];
+        }
+    }
+}
+if(!function_exists('replace_unicode_escape_sequence')){
+    /**
+     * description：
+    调用
+    $name = '\u65b0\u6d6a\u5fae\u535a';
+    $data = unicodeDecode($name); //输出新浪微博
+     * author：wanghua
+     * @param $match
+     * @return string
+     */
+    function replace_unicode_escape_sequence($match) {
+        return mb_convert_encoding(pack('H*', $match[1]), 'UTF-8', 'UCS-2BE');
+    }
+}
+
+
+if(!function_exists('unicodeDecode')){
+
+    /**
+     * description：中文被unicode编码后了的数据，解码出中文 Unicode解码
+     * author：wanghua
+     * @param $data
+     * @return null|string|string[]
+     */
+    function unicodeDecode($data){
+
+        $rs = preg_replace_callback('/\\\\u([0-9a-f]{4})/i', 'replace_unicode_escape_sequence', $data);
+
+        return $rs;
+    }
+}
+
+
+/**
+ * description：unicode编码
+ * author：wanghua
+ * @param $str
+ * @return string
+ */
+if(!function_exists('unicodeEncode')){
+    function unicodeEncode($str){
+        //split word
+        preg_match_all('/./u',$str,$matches);
+
+        $unicodeStr = "";
+        foreach($matches[0] as $m){
+            //拼接
+            $unicodeStr .= "&#".base_convert(bin2hex(iconv('UTF-8',"UCS-4",$m)),16,10);
+        }
+        return $unicodeStr;
     }
 }
