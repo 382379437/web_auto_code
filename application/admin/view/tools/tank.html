@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tank</title>
+    <link href="__STATIC__/plugs/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="__STATIC__/plugs/layui/css/layui.css" rel="stylesheet">
+    <style>
+        .main{}
+        .tank1p{
+            /*border: 1px solid black;*/
+            width: 100px;
+            height: 100px;
+            /* 相对于父级 */
+            position: absolute;
+            left: 800px;
+            top: 600px;
+        }
+        .fire{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            display: none;
+        }
+        .score{
+            width: 20px;
+            height: 20px;
+            position: fixed;
+            top: 100px;
+            left: 50%;
+            color: red;
+            font-size: 22px;
+            display: none;
+        }
+        /* 障碍宽度与tank宽高一致 */
+        .stone{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: grey;
+            display: none;
+            background-image: url('__STATIC__/admin/img/tank2.jpg');
+            background-repeat:no-repeat;
+            background-size:100% 100%;
+            -moz-background-size:100% 100%;
+        }
+    </style>
+    <script src="__STATIC__/plugs/jquery/jquery.min.js"></script>
+    <script src="__STATIC__/plugs/layui/layui.js"></script>
+</head>
+<body>
+
+<div class="main">
+
+    <img class="tank1p" tank="tank_t" src="__STATIC__/admin/img/tank_t.jpg">
+    <!--<img class="tank_diren" tank="tank_t" src="__STATIC__/admin/img/tank_t.jpg">-->
+</div>
+</body>
+<!-- fire初始位置 fire属性表示方位-->
+    <img class="fire" fire="tank_t" src="__STATIC__/admin/img/zidan_t.jpg">
+<!-- 存放打出去的fire -->
+<div class="out_fire_div">
+
+</div>
+
+<!-- 积分 -->
+<div class="score">
+    +1
+</div>
+<script>
+    //定义方向
+    var tank_t = '__STATIC__/admin/img/tank_t.jpg';
+    var tank_d = '__STATIC__/admin/img/tank_d.png';
+    var tank_l = '__STATIC__/admin/img/tank_l.png';
+    var tank_r = '__STATIC__/admin/img/tank_r.png';
+    //fire方向
+    var fire_t = '__STATIC__/admin/img/zidan_t.jpg';
+    var fire_d = '__STATIC__/admin/img/zidan_d.jpg';
+    var fire_l = '__STATIC__/admin/img/zidan_l.jpg';
+    var fire_r = '__STATIC__/admin/img/zidan_r.jpg';
+
+    //tank宽高（固定不变）
+    var tank_width = $('.tank1p').width();
+    var tank_height = $('.tank1p').height();
+    var fire_width = $('.fire').width();//fire宽度
+    var fire_height = $('.fire').height();
+    var doc_height = $(document).height();//文档高度
+    var doc_width = $(document).width();//文档高度
+    $(function () {
+       //初始化障碍、敌军
+        createStone( 6);
+    });
+    //
+    var fire_close = 1;
+    $(function () {
+        //键盘按下
+        $('body').bind('keydown', function (e) {
+            var key = e.keyCode;
+            // console.log(key);
+            if(key == 87){
+                //上
+                up();
+            }else if(key == 83){
+                //下
+                down();
+            }else if(key == 65){
+                //左
+                left();
+            }else if(key == 68){
+                //右
+                right();
+            }
+        });
+        //发射一颗fire
+        $('body').bind('keyup', function (e) {
+            if(!fire_close)return;//子弹开关
+            var key = e.keyCode;
+
+            if(key == 74){
+                fire();
+            }
+        })
+    });
+
+    //===========================tank方位校准========================
+    function up() {
+        var position = $('.tank1p').position();//初始化tank位置
+        $('.tank1p').attr('src', tank_t);//切换方向
+        $('.tank1p').attr('tank','tank_t');//设置tank属性
+
+        if(position.top < 8)return;//超过边界停止
+        $('.tank1p').css({'top':position.top-5})
+    }
+    function down() {
+        var position = $('.tank1p').position();//初始化tank位置
+        $('.tank1p').attr('src', tank_d);//切换方向
+        $('.tank1p').attr('tank','tank_d');//设置tank属性
+
+        if(position.top > doc_height-tank_height-8)return;//超过边界停止
+        $('.tank1p').css({'top':position.top+5})
+    }
+    function left() {
+        var position = $('.tank1p').position();//初始化tank位置
+        $('.tank1p').attr('src', tank_l);//切换方向
+        $('.tank1p').attr('tank','tank_l');//设置tank属性
+
+        if(position.left < 8)return;//超过边界停止
+        $('.tank1p').css({'left':position.left-5})
+    }
+    function right() {
+        var position = $('.tank1p').position();//初始化tank位置
+        $('.tank1p').attr('src', tank_r);//切换方向
+        $('.tank1p').attr('tank','tank_r');//设置tank属性
+
+        if(position.left > doc_width-tank_width-8)return;//超过边界停止
+        $('.tank1p').css({'left':position.left+5})
+    }
+    //===========================tank方位校准========================
+
+
+    //===========================fire方位校准，fire运动========================
+    function fire() {
+        var position = $('.tank1p').position();//初始化tank位置
+        var tank = $('.tank1p').attr('tank');
+        var src = '';
+        if(tank == 'tank_t'){
+            src = fire_t;
+            $('.fire').css({'top':position.top-fire_width,'left':position.left+(fire_width/2 - 2)});
+        }else if(tank == 'tank_d'){
+            src = fire_d;
+            $('.fire').css({'top':position.top+tank_height+2,'left':position.left+(fire_width/2 +1)});
+        }else if(tank == 'tank_l'){
+            src = fire_l;
+            $('.fire').css({'left':position.left-fire_width,'top':position.top+(tank_width/2 - fire_width/2)});
+        }else if(tank == 'tank_r'){
+            src = fire_r;
+            $('.fire').css({'left':position.left+tank_width+2,'top':position.top+(fire_width/2 +1)});
+        }
+        $('.fire').attr('fire',tank);//fire开火方位跟随tank
+        $('.fire').attr('src',src);//fire方位
+        //设置fire位置
+        $('.fire').show();
+
+        //fire飞行速度
+        var fire_speed = 3;
+        var doc_bianjie = fire_speed+5;
+        var fire_pinlv = 10;//fire飞行频率
+
+        //发射开始-fire按坐标运动
+        if(tank == 'tank_t'){
+            var index = setInterval(function (args) {
+                fire_close = false;
+                var fire_pos = $('.fire').position();//获取fire位置
+                $('.fire').css({'top':fire_pos.top-fire_speed});
+                peng(fire_pos, index, tank);
+                if(fire_pos.top < 0){
+                    clearInterval(index);//关闭子弹运动
+                    fireClear('.fire');//关闭子弹
+                    fire_close = true;//开启fire
+                }
+            },fire_pinlv);
+        }else if(tank == 'tank_d'){
+            var index = setInterval(function (args) {
+                fire_close = false;
+                var fire_pos = $('.fire').position();//获取fire位置
+                $('.fire').css({'top':fire_pos.top+fire_speed});
+                peng(fire_pos, index, tank);
+                //超过浏览器文档高度
+                if(fire_pos.top >= doc_height-fire_height-doc_bianjie){
+                    clearInterval(index);//关闭子弹运动
+                    fireClear('.fire');//关闭子弹
+                    fire_close = true;//开启fire
+                }
+            },fire_pinlv);
+        }else if(tank == 'tank_l'){
+
+            var index = setInterval(function (args) {
+                fire_close = false;
+                var fire_pos = $('.fire').position();//获取fire位置
+                $('.fire').css({'left':fire_pos.left-fire_speed});
+                peng(fire_pos, index, tank);
+                if(fire_pos.left < 0){
+                    clearInterval(index);//关闭子弹运动
+                    fireClear('.fire');//关闭子弹
+                    fire_close = true;//开启fire
+                }
+            },fire_pinlv);
+        }else if(tank == 'tank_r'){
+            var index = setInterval(function (args) {
+                fire_close = false;
+                var fire_pos = $('.fire').position();//获取fire位置
+                $('.fire').css({'left':fire_pos.left+fire_speed});
+                peng(fire_pos, index, tank);
+                //超过浏览器文档宽度
+                if(fire_pos.left >= doc_width-fire_height-doc_bianjie){
+                    clearInterval(index);//关闭子弹运动
+                    fireClear('.fire');//关闭子弹
+                    fire_close = true;//开启fire
+                }
+            },fire_pinlv);
+        }
+    }
+    //积分加一
+    function scoreAdd() {
+
+        $('.score').fadeIn(800);
+        setTimeout(function (args) {
+            $('.score').fadeOut(800);
+        },300);
+
+    }
+    //fire消失
+    function fireClear(cls) {
+        $(cls).hide();
+    }
+    //===========================fire方位校准，fire运动========================
+
+    // 随机产生敌方tank
+    function diren() {
+        //坐标
+
+    }
+    //fire爆炸
+    function boom(cls) {
+        //显示爆炸
+        $(cls).css({'background-image':'url("/static/admin/img/baozha.gif")'});
+        setTimeout(function (args) {
+            $(cls).remove();//障碍消失
+        },700);
+    }
+
+    //方块障碍
+    function createStone(cnum) {
+
+        for(var i=0; i<cnum; i++){
+            <!-- 方块障碍 -->
+            var sto_id = 'stone_'+Math.random()*1000000000000000000;
+
+            var sto = '<div class="stone" id="'+sto_id+'"> </div>';
+            $('.main').append(sto);
+            //定位
+            var t = doc_height/2;//top
+            t = Math.ceil(Math.random()*t);
+            var l = Math.ceil(Math.random()*1000);
+
+            if(t == l)t+=1;
+
+            $('#'+sto_id).css({'top':t, 'left':l});
+
+            // $($('#'+sto_id)).fadeIn(1000);
+        }
+        //解决敌军tank重合
+        var o = 0;//上一架tank
+        $('.stone').each(function (a,b) {
+            if(o){
+                //当前tank-坐标详见
+                if(Math.abs($(b).position().top-$(o).position().top)<=tank_height){
+                    $(b).position().top = $(b).position().top+tank_height;
+                    $(b).position().left = $(b).position().left+tank_height;
+
+                }
+                $(b).fadeIn(1000);
+            }
+            o = b;
+        });
+
+    }
+    
+    //碰撞计算 pos fire坐标，index 定时器, direction fire方位
+    function peng(pos, index, direction) {
+        //fire本体范围
+        var fire_scope = {
+            'top':pos.top,
+            'left':pos.left,
+            'topheigth':pos.top+fire_height,
+            'leftwidth':pos.left+fire_width
+        };
+
+        //fire飞行：方位上下左右
+        if(direction == 'tank_t'){
+            //循环障碍物
+            $('.stone').each(function (a, b) {
+
+                //为了便于计算，需要将fire飞行速度调慢
+                if(
+                    (fire_scope.top <= ($(b).position().top+$(b).height())
+                        && fire_scope.left <= ($(b).position().left+$(b).width())
+                        && fire_scope.leftwidth >= ($(b).position().left)
+                        && fire_scope.top >= ($(b).position().top)
+                    )
+                ){
+                    //碰撞
+                    scoreAdd(); //积分加1
+                    fireClear('.fire');//fire消失
+                    boom($(b));//障碍爆炸并消失
+                    //关闭fire飞行
+                    clearInterval(index);
+                    fire_close = true;//开启fire
+                }
+
+            });
+        }else if(direction == 'tank_d'){
+            //循环障碍物
+            $('.stone').each(function (a, b) {
+                //为了便于计算，需要将fire飞行速度调慢
+                if(
+                    (fire_scope.topheigth >= ($(b).position().top)
+                        && fire_scope.left <= ($(b).position().left+$(b).width())
+                        && fire_scope.leftwidth >= ($(b).position().left)
+                        && fire_scope.topheigth <= ($(b).position().top+$(b).height())
+                    )
+                ){
+                    console.log('碰撞');
+                    //碰撞
+                    scoreAdd(); //积分加1
+                    fireClear('.fire');//fire消失
+                    boom($(b));//障碍爆炸并消失
+                    //关闭fire飞行
+                    clearInterval(index);
+                    fire_close = true;//开启fire
+                }
+
+            });
+
+        }else if(direction == 'tank_l'){
+            //循环障碍物
+            $('.stone').each(function (a, b) {
+                //为了便于计算，需要将fire飞行速度调慢
+                if(
+                    fire_scope.left <= ($(b).position().left+$(b).width())
+                    && fire_scope.top <= ($(b).position().top+$(b).height())
+                    && fire_scope.top+fire_height >= ($(b).position().top)
+                    && fire_scope.left >= ($(b).position().left)
+
+                ){
+                    console.log('碰撞');
+                    //碰撞
+                    scoreAdd(); //积分加1
+                    fireClear('.fire');//fire消失
+                    boom($(b));//障碍爆炸并消失
+                    //关闭fire飞行
+                    clearInterval(index);
+                    fire_close = true;//开启fire
+                }
+
+            });
+
+        }else if(direction == 'tank_r'){
+            //循环障碍物
+            $('.stone').each(function (a, b) {
+                //为了便于计算，需要将fire飞行速度调慢
+                if(
+                    fire_scope.left+fire_width >= ($(b).position().left)
+                    && fire_scope.top+fire_height >= ($(b).position().top)
+                    && fire_scope.top <= ($(b).position().top+$(b).height())
+                    && fire_scope.left <= ($(b).position().left+$(b).width())
+                ){
+                    console.log('碰撞');
+                    //碰撞
+                    scoreAdd(); //积分加1
+                    fireClear('.fire');//fire消失
+                    boom($(b));//障碍爆炸并消失
+                    //关闭fire飞行
+                    clearInterval(index);
+                    fire_close = true;//开启fire
+                }
+
+            });
+
+        }
+
+
+    }
+
+</script>
+</html>

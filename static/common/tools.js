@@ -238,8 +238,8 @@ function countDown(obj){
 }
 
 //加载省市区
-function loadProv(){
-    $.get('{:url("Order/getProvince")}',{}, function (res) {
+function loadProv(url){
+    $.get(url,{}, function (res) {
         if(res){
             var str = '<option value="">--请选择--</option>';
             for (var i=0; i<res.length; i++){
@@ -251,9 +251,9 @@ function loadProv(){
     },'json');
 }
 
-function getCity(){
+function getCity(url){
     var id = $('select[name="province"]').val();
-    $.get('{:url("Order/getCity")}',{id:id}, function (res) {
+    $.get(url,{id:id}, function (res) {
         if(res){
             var str = '<option value="">--请选择--</option>';
             for (var i=0; i<res.length; i++){
@@ -265,9 +265,9 @@ function getCity(){
     },'json');
 }
 
-function getArea(){
+function getArea(url){
     var id = $('select[name="city"]').val();
-    $.get('{:url("Order/getArea")}',{id:id}, function (res) {
+    $.get(url,{id:id}, function (res) {
         if(res){
             var str = '<option value="">--请选择--</option>';
             for (var i=0; i<res.length; i++){

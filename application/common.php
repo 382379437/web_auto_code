@@ -98,19 +98,21 @@ function local_image($url)
 }
 
 /**
- * description：获取表字段
+ * description：获取某张表的字段
  * author：wanghua
  * @param $tablename
  * @return array
  */
 function getTableFieldsByName($tablename){
-    if(!$tablename){
-        return [];
-    }
-    return Db::name(config('database.prefix').ucfirst($tablename))->getTableFields();
+    if(!$tablename)return [];
+    $prefix = config('database.prefix');
+    if($prefix && false !== strpos($tablename, $prefix))
+        $tablename = $prefix.$tablename;
+
+    return Db::table($tablename)->getTableFields();
 }
 /**
- * description：换行输出
+ * description：换行输出（一般用于调试 eg：在循环中输出）
  * author：wanghua
  */
 function brEcho($msg){
@@ -120,7 +122,7 @@ function brEcho($msg){
 }
 
 /**
- * description：表单类型 1 input 2 select 3 radio 4 textarea 5 textarea_editer 6 img
+ * description：常用表单类型 1 input 2 select 3 radio 4 textarea 5 textarea_editer 6 img
  * author：wanghua
  * @param string $type
  * @param bool|false $all
@@ -142,7 +144,7 @@ function getFormType($type='', $all=false){
 }
 
 /**
- * description：获取字段类型
+ * description：根据下标获取字段类型（常用且可配置）
  * author：wh
  */
 function getFieldsType($type='', $all=false){
@@ -309,16 +311,16 @@ function is_email($email){
 /**
  * description：删除目录下的文件：权限不足可能导致失败
  * author：wanghua
- * @param $backpath
+ * @param $path
  * @return bool
  */
-function deleteFile($backpath=''){
-    if(!$backpath || !file_exists($backpath))return false;
-    $files = scandir($backpath);
+function deleteFile($path=''){
+    if(!$path || !file_exists($path))return false;
+    $files = scandir($path);
     if($files){
         foreach ($files as $key => $val){
             if(!in_array($val, ['.', '..'])){
-                unlink($backpath.$val);
+                unlink($path.$val);
             }
         }
         return true;
@@ -643,7 +645,7 @@ if(!function_exists('returnArrSomeOne')){
 }
 if(!function_exists('getTabFieldByCon')){
     /**
-     * description：查询某表某字段
+     * description：查询数据，返回这个字段的列
      * author：wanghua
      * @param $table
      * @param $field
@@ -657,7 +659,7 @@ if(!function_exists('getTabFieldByCon')){
         else
         {
             $d = Db::table($table)->field($field)->select();
-            return $d[$field];
+            return array_column($d, $field);
         }
     }
 }

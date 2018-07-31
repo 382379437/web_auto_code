@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证textarea输入框字数限制,只作提示不作提交限制</title>
+    <link href="__STATIC__/plugs/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="__STATIC__/plugs/layui/css/layui.css" rel="stylesheet">
+    <script src="__STATIC__/plugs/jquery/jquery.min.js"></script>
+    <script src="__STATIC__/plugs/layui/layui.js"></script>
+</head>
+<body>
+<div class="formControls col-xs-8 col-sm-9">
+    <textarea name="tablemsg" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" onKeyUp="Huitextarealength(this)" title="点我右下角可拖动"></textarea>
+    <p class="textarea-numberbar"><em class="textarea-length">0</em>/<am>100</am></p>
+</div>
+
+</body>
+<script>
+    /**
+     * 验证textarea输入框字数限制,只作提示不作提交限制
+     * 1、必须将总数用<am>标签装起来 2、调用本方法
+     * 参考：<em class="textarea-length">0</em>/<am>100</am>
+     * @param obj
+     * @constructor
+     */
+    var Huitextarealength = function (obj){
+        var html = $(obj).parent();
+        var tatal = html.find('am').html();
+        var sets = $(obj).val().length;
+
+        if(sets*1>tatal*1){
+            var str = '<div style="width: auto;position: absolute; right: 4%;color: red;">内容超出限制</div>';
+            $(obj).after(str);
+            html.find('em').css({color:'red'});
+        }else {
+            $(obj).parent().find('div').remove();
+            html.find('em').css({color:'black'});
+        }
+        //设置已输入数量
+        html.find('em').html(sets);
+    }
+</script>
+</html>

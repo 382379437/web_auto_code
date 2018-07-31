@@ -22,12 +22,18 @@ use think\Loader;
 
 class Tools extends BasicAdmin
 {
+    function tank(){
+
+        return $this->fetch();
+    }
+
     function canvas(){
 
         return $this->fetch();
     }
     //页面功能测试
     function index(){
+
 //
 //        print_r(date('Y-m-d', time()));
 //        $ddddd = Db::name('web_member')->where('create_time','>=',strtotime(date('Y-m-d', time())))->select();
@@ -46,8 +52,17 @@ class Tools extends BasicAdmin
             ['id'=>13,'title'=>'视频3'],
         ];
     }
+    function wanghjs(){
+
+        return $this->fetch();
+    }
+    function textarea(){
+
+        return $this->fetch();
+    }
     //代码功能测试
     function test(){
+        var_dump(explode('k', 'qwerouq'));die;
         $aa = true;
         var_dump(is_null($aa));die;
 
@@ -113,19 +128,20 @@ class Tools extends BasicAdmin
         echo  '<img src="/runtime/rotate_image.png">';
 
         // 给原图左上角添加水印并保存water_image.png
-        echo '<br/>给原图左上角添加水印并保存water_image:<br/>';
+        echo '<br/>给原图左上角添加图片水印并保存water_image:<br/>';
         $temp_url = $temp_url.'/runtime';
         $image = Image::open($uu);
 
 
-        $image->water($old_img.'/logo.png')->save($temp_url.'/water_image.png');
+        $image->water($old_img.'/qrcode.png')->save($temp_url.'/water_image.png');
         echo  '<img src="/runtime/water_image.png">';
 
 
         //文字水印
         echo '<br/>给原图添加文字水印:<br/>';
         $image = Image::open($uu);
-        $image->text('十年磨一剑 - 为API开发设计的高性能框架',$temp_url.'/SOURCEHANSANSCN-REGULAR.TTF',20,'#ffffff', $image::WATER_CENTER,-100)->save($temp_url.'/text_image.png');
+        $image->text('十年磨一剑 - 为API开发设计的高性能框架',$temp_url.'/../static/font/zhankuhappy.TTF',20,'#ffffff', $image::WATER_CENTER,-100)
+            ->save($temp_url.'/text_image.png');
         echo  '<img src="/runtime/text_image.png">';
     }
 
