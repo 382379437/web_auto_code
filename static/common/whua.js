@@ -1,5 +1,106 @@
+/**
+ * [公共]获取url参数，返回指定|所有参数
+ * @param {Object} k 根据键获取值
+ * @param {Object} v 修改键的值
+ */
+var getParam = function(k, v){
+	var p = location.search;//参数带？
+	var sp = p.substr(1, p.length).split('&');
+	var arr_obj = {};
+	for(var i=0; i<sp.length; i++){
+		arr_obj[sp[i].split('=')[0]] = sp[i].split('=')[1];
+	}
+	if(k){
+		if(v){
+			arr_obj[k] = v;
+		}else{
+			return arr_obj[k];
+		}
+	}
+	return arr_obj;	
+};
+
+/**
+ * [公共]根据class获取元素
+ * @param {Object} cls
+ */
+var getClass = function(cls){
+	var o = document.getElementsByClassName(cls);
+	if(o.length == 1){
+		return o[0];
+	}
+	return o;
+};
+/**
+ * 
+ *添加：节点.classList.add("类名");
+ * [公共]为元素添加class
+ * @param {Object} cls
+ * @param {Object} cn
+ */
+var addClass = function(cls,cn){
+	var o = getClass(cls);
+	if(o.length > 1){
+		for(var i=0; i<o.length; i++){
+			o[i].classList.add(cn);
+		}
+	}else{
+		o.classList.add(cn);
+	}
+	return o;
+};
+
+/**
+ * 
+ * [公共]删除class：节点.classList.remove("类名");
+ * @param {Object} cls
+ * @param {Object} cn
+ */
+var delClass = function(cls, cn){
+	var o = getClass(cls);
+	if(o.length > 1){
+		for(var i=0; i<o.length; i++){
+			o[i].classList.remove(cn);
+		}
+	}else{
+		o.classList.remove(cn);
+	}
+	return o;
+};
+
+/**
+ * [公共]元素显示-(class)
+ * @param {Object} cls
+ */
+var showIn = function(cls){
+	var o = document.getElementsByClassName(cls);
+	if(o.length > 1){
+		for(var i=0; i<o.length; i++){
+			o[0].style.display = 'inherit';
+		}
+	}else{
+		o[0].style.display = 'inherit';
+	}
+	return o;
+};
+/**
+ * [公共]元素隐藏-(class)
+ * @param {Object} cls
+ */
+var showOut = function(cls){
+	var o = document.getElementsByClassName(cls);
+	if(o.length > 1){
+		for(var i=0; i<o.length; i++){
+			o[0].style.display = 'none';
+		}
+	}else{
+		o[0].style.display = 'none';
+	}
+    return o;
+};
+
 window.wh = {
-	test:function (o) {
+    test:function (o) {
         console.log(o);
     },
     /**
@@ -70,8 +171,20 @@ window.wh = {
      * [公共]根据class获取元素
      * @param {Object} cls
      */
-    getClass : function(cls){
-        var o = document.getElementsByClassName(cls);
+    getEleCls : function(ele){
+        var o = document.getElementsByClassName(ele);
+        if(o.length == 1){
+            return o[0];
+        }
+        return o;
+    },
+    /**
+	 * [公共]根据 id 获取元素
+     * @param cls
+     * @returns {*}
+     */
+    getEleId : function(ele){
+        var o = document.getElementById(ele);
         if(o.length == 1){
             return o[0];
         }
@@ -131,11 +244,20 @@ window.wh = {
         return pattern.test(card);
     },
     /**
+     * 验证手机
+     * @param mobile
+     * @returns {*|boolean}
+     */
+    isMobile:function(mobile){
+        var mobreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;
+        return mobreg.test(mobile)
+    },
+    /**
      * 回车键按下确认
      */
-    enterKeydown : function(ele_id){
-        if (event.keyCode==13){
-            document.getElementById(ele_id).click();
+    enterKeydown: function(ele){
+        if (event.keyCode == 13){
+            $(ele).submit();
         }
     },
     /**
@@ -287,7 +409,7 @@ window.wh = {
      * 按钮显示倒计时60s并动态计时
      * @param obj
      */
-     countDown : function(obj){
+    countDown : function(obj){
         var num = 60;
         $(obj).attr('oldtxt', $(obj).val());//保存按钮原文本
 
@@ -324,7 +446,7 @@ window.wh = {
      * @param url
      */
     getCity : function(url){
-    var id = $('select[name="province"]').val();
+        var id = $('select[name="province"]').val();
         $.get(url,{id:id}, function (res) {
             if(res){
                 var str = '<option value="">--请选择--</option>';
@@ -341,7 +463,7 @@ window.wh = {
      * @param url
      */
     getArea : function(url){
-    var id = $('select[name="city"]').val();
+        var id = $('select[name="city"]').val();
         $.get(url,{id:id}, function (res) {
             if(res){
                 var str = '<option value="">--请选择--</option>';
@@ -375,6 +497,109 @@ window.wh = {
                     location.href = url;
                 }
             });
+        });
+    },
+    /**
+	 * [公共]表单验证
+     * @param form
+     * @returns {boolean}
+     */
+	validate:function (form) {
+	    var r = true;
+        $(form).find('*').each(function (k, o) {
+            var ele_val = $(o).val();
+            var attr = $(o).attr('data-validate');
+            if(attr){
+                $(o).addClass('tips_'+k);//临时class
+                var ele = '.tips_'+k;
+                if(attr == 'require'){
+                    if(ele_val == ''){
+                        wh.tips('这里必须哦', ele);//根据临时class处理后续css逻辑
+                        wh.blur(o, ele);
+                        r = false;//指定返回结果
+                        return false;//退出循环
+                    }
+                }else if(attr == 'mobile'){
+                    if(false === wh.isMobile(ele_val)){
+                        wh.tips('这里是手机号哦', ele);
+                        wh.blur(o, ele);
+                        r = false;//指定返回结果
+                        return false;
+                    }
+
+                }else if(attr == 'number'){
+                    if(false === /^\d*$/.test(ele_val)){
+                        wh.tips('这里是数字哦', ele);
+                        wh.blur(o, ele);
+                        r = false;//指定返回结果
+                        return false;
+                    }
+                }else if(attr == 'birthday'){
+                    //todo ...
+
+                }else if(attr == 'date'){
+					//验证日期格式
+					//todo...
+
+                }else if(attr == 'email'){
+                    if(false === wh.isEmail(ele_val)){
+                        wh.tips('这里是邮箱哦', ele);
+                        wh.blur(o, ele);
+                        r = false;//指定返回结果
+                        return false;
+                    }
+                }else if(attr == 'txtnum'){
+                    //字母+数字
+                    if(false === wh.isTxtNum(ele_val)){
+                        wh.tips('这里是字母和（或）数字哦', ele);
+                        wh.blur(o, ele);
+                        r = false;//指定返回结果
+                        return false;
+                    }
+                }else if(attr == 'card'){
+                    if(false === wh.isCardNo(ele_val)){
+                        wh.tips('这里是身份证哦', ele);
+                        wh.blur(o, ele);
+                        r = false;//指定返回结果
+                        return false;
+                    }
+                }
+            }
+        });
+        return r;
+    },
+    /**
+     * 自写验证邮箱
+     * @param p
+     * @returns {*|boolean}
+     */
+    isEmail:function (p) {
+        return /^([A-Z|a-z|0-9|\D]*)@([a-z|A-Z|0-9]*).[a-z|A-Z]*$/.test(p);
+    },
+    /**
+     * 检查是否是字母或（和）数字
+     * @param p
+     * @param type 为 true 则包含特殊字符 否则不包含
+     * @returns {*|boolean}
+     */
+    isTxtNum:function (p, type) {
+
+        return type?/^[A-Z|a-z|0-9]|[.~@#%&_-]+$/.test(p):/^([A-Z|a-z|0-9])+$/.test(p);
+    },
+    //提示
+	tips:function (msg, ele) {
+        layer.tips(msg, ele);
+        $(ele).css({'border':'1px solid red'});
+    },
+    //失去焦点提示
+    blur:function (o, ele) {
+        $(o).bind('blur',function () {
+            //元素警告样式
+            if($(ele).val()!='')$(ele).css({'border':0});
+            else {
+                wh.tips('这里必须哦', ele);
+                $(ele).css({'border':'1px solid red'});
+            }
         });
     }
 };
