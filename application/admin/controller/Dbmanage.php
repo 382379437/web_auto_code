@@ -202,6 +202,7 @@ DROP TABLE IF EXISTS `{$table_name}`;-- --"."
         if(input('down'))$p = $page-1;
         $p = $p==''?0:$p;
         $count = $this->getCount($sql);//查询总条数
+
         if(strpos($sql, 'limit')){
             if(false === strpos($sql,';'))$sql = $sql.';';
             $sql_ = substr($sql, 0, strpos($sql, 'limit'));
@@ -256,7 +257,12 @@ DROP TABLE IF EXISTS `{$table_name}`;-- --"."
         if(strpos($sql, 'limit')){
             $sql_ = substr($sql, 0, strpos($sql, 'limit'));
         }
+        if(strpos($sql, '*')){
+            $sql_ = str_replace('*','count(*) as dbm_count',$sql_);
+        }else{
+            $sql_ = str_replace('select','select count(*) as dbm_count,',$sql_);
+        }
         $data = Db::query($sql_);
-        return count($data);
+        return $data[0]['dbm_count'];
     }
 }
