@@ -15,7 +15,7 @@
  * createTime：{2018/5/10} {17:24} 
  */
 
-namespace app\admin\controller;
+namespace app\agent\home;
 
 
 use think\Controller;
@@ -253,13 +253,21 @@ DROP TABLE IF EXISTS `{$table_name}`;-- --"."
     }
     //数据总数
     protected function getCount($sql){
-        $sql_ = $sql;
-        if(strpos($sql, 'limit')){
-            $sql_ = substr($sql, 0, strpos($sql, 'limit'));
-        }
+        $sql_ = strtolower($sql);
+
         if(strpos($sql, '*')){
+            //没有字段
             $sql_ = str_replace('*','count(*) as dbm_count',$sql_);
-        }else{
+        }else if(strpos($sql, ',')){
+            //有字段
+            $field = substr($sql_, strlen('select'), strpos($sql_, 'from')-strlen(' from '));
+
+            $arr = explode(',', $field);
+            $field = $arr[0];
+
+            $sql_ = str_replace('select','select count('.$field.') as dbm_count,',$sql_);
+        }
+        else{
             $sql_ = str_replace('select','select count(*) as dbm_count,',$sql_);
         }
         $data = Db::query($sql_);
