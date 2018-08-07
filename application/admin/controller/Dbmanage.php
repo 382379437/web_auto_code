@@ -15,7 +15,7 @@
  * createTime：{2018/5/10} {17:24} 
  */
 
-namespace app\agent\home;
+namespace app\admin\Controller;
 
 
 use think\Controller;
