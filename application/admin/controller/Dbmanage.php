@@ -251,8 +251,31 @@ DROP TABLE IF EXISTS `{$table_name}`;-- --"."
         //截取
         return array_slice($sql_his_arr,0, 10);
     }
+   
     //数据总数
     protected function getCount($sql){
+        $sql_ = strtolower($sql);
+
+        if(false !== strpos($sql, 'select')){
+            if(strpos($sql, '*')){
+                //没有字段
+                $sql_ = str_replace('*','count(*) as dbm_count',$sql_);
+            }else if(strpos($sql, ',')){
+                //有字段
+                $field = substr($sql_, strlen('select'), strpos($sql_, 'from')-strlen(' from '));
+
+                $arr = explode(',', $field);
+                $field = $arr[0];
+
+                $sql_ = str_replace('select','select count('.$field.') as dbm_count,',$sql_);
+            }else{
+                $sql_ = str_replace('select','select count(*) as dbm_count,',$sql_);
+            }
+        }
+
+        $data = Db::query($sql_);
+        return empty($data[0]['dbm_count'])?0:$data[0]['dbm_count'];
+    }
         $sql_ = strtolower($sql);
 
         if(strpos($sql, '*')){
