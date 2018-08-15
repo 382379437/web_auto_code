@@ -22,6 +22,10 @@ use think\Loader;
 
 class Tools extends BasicAdmin
 {
+    function landlords(){
+
+        return $this->fetch();
+    }
     function tank(){
 
         return $this->fetch();

@@ -601,5 +601,56 @@ window.wh = {
                 $(ele).css({'border':'1px solid red'});
             }
         });
+    },
+    /**
+     * 设置cookie
+     **/
+    setCookie : function(key, val){
+        document.cookie = key+'='+encodeURIComponent(val);
+        return true;
+    },
+    /**
+     * 将
+     * key=val;key1=val1
+     * key=val&key1=val1
+     * 格式的字符串转换为二维数组
+     **/
+    changeUri : function(uri, str){
+        if(!str)str = ';';//拆分符号
+        var spl_arr = uri.split(str);
+
+        var res_arr = [];//存储结果
+        for(var i=0; i<spl_arr.length; i++){
+            var tmparr = spl_arr[i].split('=');
+            res_arr[i] = tmparr;
+        }
+        return res_arr;
+    },
+    /**
+     * 获取cookie[仅返回有效数据]
+     **/
+    getCookie : function(key){
+        //假设存储格式是：key=val;key1=val1
+        var cook_arr = document.cookie.split(';');
+
+        //验证一下,没有值就返回false，不进入下一个流程
+        if(!cook_arr)return false;
+
+        var res_arr = [];//存储解析结果
+        for(var i=0; i<cook_arr.length; i++){
+            //这里要再解析一次
+            var arr = cook_arr[i].split('=');
+            //这里表示满足key=val格式
+            if(arr && arr.length==2)res_arr.push ([arr[0].trim(),decodeURIComponent(arr[1].trim())]);//存储
+        }
+        if(key){
+            for(var j=0; j<res_arr.length; j++){
+                if(key == res_arr[j][0])return res_arr[j][1];//返回正确val
+            }
+        }else{
+            return res_arr;//key不存在就返回所有，有时候还是想看看所有的值
+        }
+        //默认返回false 表示没有取到值
+        return false;
     }
 };
