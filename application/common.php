@@ -715,3 +715,41 @@ if(!function_exists('unicodeEncode')){
         return $unicodeStr;
     }
 }
+if(!function_exists('htmlEncode')){
+    /**
+     * description：html转义，防止xss攻击
+     * author：wanghua
+     * @param $s
+     * @return mixed
+     */
+    function htmlEncode($s){
+        $s = str_replace('&', '&amp;', $s);
+        $s = str_replace('<', '&lt;', $s);
+        $s = str_replace('>', '&gt;', $s);
+        $s = str_replace(' ', '&nbsp;', $s);
+        $s = str_replace("'", '&#39;', $s);
+        $s = str_replace('"', '&quot;', $s);
+        $s = str_replace('\n', '<br/>', $s);
+        $s = str_replace('=', '&egt;', $s);
+        return $s;
+    }
+}
+if(!function_exists('htmlDecode')){
+    /**
+     * description：html 反转义防止xss攻击
+     * author：wanghua
+     * @param $s
+     * @return mixed
+     */
+    function htmlDecode($s){
+        $s = str_replace('&amp;', '&', $s);
+        $s = str_replace('&lt;', '<', $s);
+        $s = str_replace('&gt;', '>', $s);
+        $s = str_replace('&nbsp;', ' ', $s);
+        $s = str_replace("&#39;", "'", $s);
+        $s = str_replace('&quot;', '"', $s);
+        $s = str_replace('<br/>', '\n', $s);
+        $s = str_replace('&egt;', '=', $s);
+        return $s;
+    }
+}
