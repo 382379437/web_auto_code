@@ -100,7 +100,8 @@
                 <br/>
                 <textarea autofocus  class="middle-txt-code" name="sql">{$sql?$sql:'show databases;'}</textarea>
                 <br/>
-                <input type="submit" value="查 询" accesskey="s" title="alt+s 快捷提交"> &nbsp;&nbsp;|&nbsp;&nbsp;
+                <input type="submit" value="查询" accesskey="s" title="alt+s 快捷提交"> &nbsp;&nbsp;|&nbsp;&nbsp;
+                <input type="button" value="特殊sql" onclick="teshuSql()"> &nbsp;&nbsp;|&nbsp;&nbsp;
                 <select name="current">
                     <option value="10" {:input('current')==10?'selected':''}>10</option>
                     <option value="20" {:input('current')==20?'selected':''}>20</option>
@@ -233,5 +234,11 @@
         $(window).scrollTop(0);
     });
 
+    var teshuSql = function () {
+        var sql = $('.middle-txt-code').val();
+        $.post('{:url("teshuSql")}',{sql:sql},function (res) {
+            console.log(sql)
+        },'json');
+    }
 </script>
 </html>

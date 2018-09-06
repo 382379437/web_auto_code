@@ -69,6 +69,7 @@
 </div>
 
 
+
 <script>
     //定义方向
     var tank_t = '__STATIC__/admin/img/tank_t.jpg';
@@ -90,6 +91,7 @@
     var doc_width = $(document).width();//文档宽度
     var tank_move_pos = 1;//敌军tank移动标量
     var we_tank_move_pos = 5;//敌军tank移动标量
+    var create_stone_tank_speed = 4000;//地方坦克出生频率
 
     var layer;
     layui.use(['layer'], function(){
@@ -252,11 +254,29 @@
     //积分加一
     function scoreAdd() {
 
-        $('.score').fadeIn(800);
-        setTimeout(function (args) {
-            $('.score').fadeOut(800);
-        },300);
+        divMoveRT('.score', 800, 800);
+    }
+    //克隆积分框飘起来(右上方)
+    function divMoveRT(ele, timeIn, timeOut) {
+        timeIn = timeIn?timeIn:800;
+        timeOut = timeOut?timeOut:1200;
+        $(ele).fadeIn(timeIn);
+        var pos = $(ele).position();
+        console.log('弹出框初始值：'+pos.left+':'+pos.left);
 
+        var pos_top = pos.top;
+        var pos_left = pos.left;
+        var index = setInterval(function (args) {
+            pos_top -= 1;
+            pos_left += 1;
+            $(ele).css({top:pos_top, left:pos_left});
+        },20);
+        setTimeout(function (args) {
+            $(ele).fadeOut(timeOut,'linear', function () {
+                $(ele).css({top:pos.top, left:pos.left});
+            });
+            clearInterval(index);
+        },timeOut);
     }
     //fire消失
     function fireClear(cls) {
@@ -275,6 +295,7 @@
         $(cls).css({'background-image':'url("/static/admin/img/baozha.gif")'});
         setTimeout(function (args) {
             $(cls).remove();//障碍消失
+            scoreAdd(); //积分加1
         },700);
     }
 
@@ -288,14 +309,14 @@
             var sto = '<div class="stone" id="'+sto_id+'"> </div>';
             $('.main').append(sto);
             //定位
-            $('#'+sto_id).css({'top':0, 'left':0});
+            $('#'+sto_id).css({'top':0, 'left':'45%'});
             // $($('#'+sto_id)).fadeIn(1000);
         }
 
-        //修改坦克出战顺序-左上角一一触发
+        //修改坦克出战顺序-左上角一一随机触发
         var tank_num = $('.stone').length;
 
-        wh.message('.msgdrag','敌军还有30秒到达战场！碾碎他们！', 800);
+        wh.message('.msgdrag','敌军还有30秒到达战场！碾碎他们！', 1800);
 
         var index = setInterval(function (args) {
             if(tank_num == 0){
@@ -307,12 +328,18 @@
             tank_num -= 1;
             //移动
             tankAutoMove(obj, index);
-        },8000);
+        },create_stone_tank_speed);
     }
     //tank自动移动
     function tankAutoMove(tank, parentIndex) {
 
-        var n =  getOrientation();//确定方向
+        //每n秒确定一个方位
+        var n = 2;
+        var per_n_s_pos_index = setInterval(function (args) {
+            console.log('每'+n+'秒确定一个方位');
+            n =  getOrientation();//确定方向
+        },2000);
+
         //按照方向一致运动
         var index = setInterval(function (args) {
             //移动
@@ -321,6 +348,7 @@
             if(!tank_pos){
                 //没有坦克了就退出
                 clearInterval(parentIndex);//停止移动
+                clearInterval(per_n_s_pos_index);//停止重新确定方位
                 return;
             }
             switch (n){
@@ -342,8 +370,6 @@
                     break;
                 case 2://下
 
-                    console.log(n);
-                    console.log(tank_pos);
                     if((tank_pos.top+tank_width) > doc_height){
 
                         clearInterval(index);//停止移动
@@ -368,8 +394,6 @@
                     break;
                 case 4://右
 
-                    console.log(n);
-                    console.log(tank_pos);
                     if((tank_pos.left+tank_width) > doc_width){
 
                         clearInterval(index);//停止移动
@@ -385,8 +409,8 @@
     //确定方位
     function getOrientation() {
         //确定方向 1,2,3,4 上下左右
-        $arr = [2,4];
-        var n = Math.ceil(Math.random()*2)-1;
+        $arr = [2,3,4];
+        var n = Math.ceil(Math.random()*3)-1;
         return $arr[n];//从四个方向中确定一个
     }
     //判断敌军是否被消灭完，是就关闭定时器
@@ -418,7 +442,7 @@
                     )
                 ){
                     //碰撞
-                    scoreAdd(); //积分加1
+                    // scoreAdd(); //积分加1
                     fireClear('.fire');//fire消失
                     boom($(b));//障碍爆炸并消失
                     //关闭fire飞行
@@ -440,7 +464,7 @@
                 ){
                     console.log('碰撞');
                     //碰撞
-                    scoreAdd(); //积分加1
+                    // scoreAdd(); //积分加1
                     fireClear('.fire');//fire消失
                     boom($(b));//障碍爆炸并消失
                     //关闭fire飞行
@@ -463,7 +487,7 @@
                 ){
                     console.log('碰撞');
                     //碰撞
-                    scoreAdd(); //积分加1
+                    // scoreAdd(); //积分加1
                     fireClear('.fire');//fire消失
                     boom($(b));//障碍爆炸并消失
                     //关闭fire飞行
@@ -485,7 +509,7 @@
                 ){
                     console.log('碰撞');
                     //碰撞
-                    scoreAdd(); //积分加1
+                    // scoreAdd(); //积分加1
                     fireClear('.fire');//fire消失
                     boom($(b));//障碍爆炸并消失
                     //关闭fire飞行

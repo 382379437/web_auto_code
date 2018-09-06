@@ -162,6 +162,8 @@ DROP TABLE IF EXISTS `{$table_name}`;-- --"."
      * @return mixed
      */
     function index(){
+        $sql = input('sql');
+        if(empty($sql))return $this->fetch('', ['title' => 'db管理']);
         try{
             $data = $this->paginate();
             $res = $data['data'];
@@ -251,7 +253,7 @@ DROP TABLE IF EXISTS `{$table_name}`;-- --"."
         //截取
         return array_slice($sql_his_arr,0, 10);
     }
-   
+
     //数据总数
     protected function getCount($sql){
         $sql_ = strtolower($sql);
@@ -275,5 +277,12 @@ DROP TABLE IF EXISTS `{$table_name}`;-- --"."
 
         $data = Db::query($sql_);
         return empty($data[0]['dbm_count'])?count($data):$data[0]['dbm_count'];
+    }
+    //特殊sql
+    function teshuSql(){
+        $sql = input('sql');
+
+        $res = Db::query($sql);
+        return set_res(0,$sql, $res, true);
     }
 }
