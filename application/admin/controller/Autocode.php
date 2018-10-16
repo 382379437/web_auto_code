@@ -267,7 +267,9 @@ class $control extends BasicAdmin
                 $sql = "ALTER TABLE {$tb} MODIFY COLUMN {$post['fields_name']} {$post['type']} ({$post['size']}) DEFAULT {$def} COMMENT '{$post['title']}';";
             }else{
                 //添加
-                $sql = "ALTER TABLE {$tb} ADD COLUMN {$post['fields_name']} {$post['type']} ({$post['size']}) DEFAULT {$def} COMMENT '{$post['title']}';";
+                //type & size处理 字段类型为text mediumtext longtext 时 size省略
+                $typeSize = in_array($post['type'], ['text', 'mediumtext', 'longtext'])?$post['type']:$post['type'].'('.$post['size'].')';
+                $sql = "ALTER TABLE {$tb} ADD COLUMN {$post['fields_name']} $typeSize DEFAULT {$def} COMMENT '{$post['title']}';";
             }
             try{
                 Db::execute($sql);
