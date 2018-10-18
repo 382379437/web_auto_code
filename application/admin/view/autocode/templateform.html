@@ -15,7 +15,7 @@
                 {if $ef.is_auto_tips}
                 <span style="z-index: 99999">{:isset($vo[$ef.fields_name])?$vo[$ef.fields_name]:''}</span>
                 <input type="hidden" class="{$ef.fields_name}{$key}" name="{$ef.fields_name}">
-                <input type="text" autofocus  id="{$ef.fields_name}{$key}" placeholder="请输入{$ef.title}"  class="layui-input" value="">
+                <input type="text"   id="{$ef.fields_name}{$key}" placeholder="请输入{$ef.title}"  class="layui-input" value="">
                     {php}
                         $exp_data = explode("-", $ef['is_auto_tips']);
                         $js_data_url = empty($exp_data)?'':$exp_data[0];
@@ -59,10 +59,10 @@
                         })
                     </script>
                 {else /}
-                <input type="{$ef.type=='int'?'number':'text'}" autofocus name="{$ef.fields_name}" placeholder="请输入{$ef.title}" value='{:isset($vo[$ef.fields_name])?$vo[$ef.fields_name]:""}' class="layui-input">
+                <input type="{$ef.type=='int'?'number':'text'}"  name="{$ef.fields_name}" placeholder="请输入{$ef.title}" value='{:isset($vo[$ef.fields_name])?$vo[$ef.fields_name]:""}' class="layui-input">
                 {/if}
-            {elseif $ef.form_type == 'date'}
-            <input type="date" autofocus name="{$ef.fields_name}" placeholder="请输入{$ef.title}" value='{:isset($vo[$ef.fields_name])?$vo[$ef.fields_name]:""}' class="layui-input">
+            {elseif in_array($ef.form_type, ['date', 'datetime-local'])}
+            <input type="{$ef.form_type}"  name="{$ef.fields_name}" placeholder="请输入{$ef.title}" value='{:isset($vo[$ef.fields_name])?$vo[$ef.fields_name]:""}' class="layui-input">
             {elseif $ef.form_type == 'select'/}
             <select name="{$ef.fields_name}" <?php $r_list = dealFormValueList($ef['form_value'], $ef['res_fields_name']); ?> class='layui-select full-width'>
             <option value="">请选择</option>

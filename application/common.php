@@ -129,7 +129,7 @@ function brEcho($msg){
  * @return array|string
  */
 function getFormType($type='', $all=false){
-    $arr = ['','input','date','select','radio','textarea','textarea_editer', 'img'];
+    $arr = ['','input','date','datetime-local','select','radio','textarea','textarea_editer', 'img'];
     if($type){
         if(is_numeric($type)){
             return isset($arr[$type])?$arr[$type]:$type;
@@ -474,7 +474,7 @@ if (!function_exists('data_to_xml')) {
 if (!function_exists('set_res')) {
     function set_res($code = 0, $msg = '', $data = [], $is_return_json = false){
         $r = ['code' => $code, 'msg' => $msg, 'data'=>$data];
-        return $is_return_json?json_encode($r):$r;
+        return $is_return_json?json($r):$r;
     }
 }
 
@@ -753,3 +753,10 @@ if(!function_exists('htmlDecode')){
         return $s;
     }
 }
+
+//============================[ 萌物传奇 ]===============================start
+function mapTitleByType($type){
+    return $type?'危险区':'安全区';
+}
+
+//============================[ 萌物传奇 ]===============================end
