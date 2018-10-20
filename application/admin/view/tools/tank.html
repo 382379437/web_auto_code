@@ -316,7 +316,7 @@
         //修改坦克出战顺序-左上角一一随机触发
         var tank_num = $('.stone').length;
 
-        wh.message('.msgdrag','敌军还有30秒到达战场！碾碎他们！', 1800);
+        wh.message({'msg':'敌军还有30秒到达战场！碾碎他们！', 'fadein_time':1800});
 
         var index = setInterval(function (args) {
             if(tank_num == 0){
