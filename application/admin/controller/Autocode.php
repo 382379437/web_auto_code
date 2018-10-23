@@ -149,11 +149,18 @@ class $control extends BasicAdmin
         ".'$this->title = "'.$title.'";
         list($get, $db) = [$this->request->get(), Db::name($this->table)];
         foreach (explode(",","'.implode(',', $search_fields).'") as $key) {
+            //过滤
+            if(!isset($get[$key]))
+                continue;
             if(isset($get[$key."_start"]) && $get[$key."_start"] !== \'\'){
                 $db->where($key, ">=", $get["{$key}_start"]);
                 $db->where($key, "<=", $get["{$key}_end"]);
             }else{
-                (isset($get[$key]) && $get[$key] !== \'\') && $db->whereLike($key, "%{$get[$key]}%");
+                //精确查询
+                if(is_numeric($get[$key]))
+                    (isset($get[$key]) && $get[$key] !== \'\') && $db->where($key, $get[$key]);
+                else
+                    (isset($get[$key]) && $get[$key] !== \'\') && $db->whereLike($key, "%{$get[$key]}%");
             }
         }
         $info = Db::name(\'WebAutoCodeFields\')->where([\'dbname\'=>"'.$dbname.'", \'is_deleted\'=>0])->select();
